@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="تعارف - About">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title animate-fadeInUp">تعارف</h1>
+      <p class="page-subtitle animate-fadeInUp">About the Author</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="about-section bg-gradient-cream">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image animate-on-scroll">
+          <div class="profile-frame">
+            <div class="profile-inner">ع ب</div>
+          </div>
+          <div class="profile-ornament">
+            <Icon name="sparkles" size={50} color="var(--accent-color)" />
+          </div>
+        </div>
+        <div class="about-text animate-on-scroll">
+          <h2>ایک ادبی سفر</h2>
+          <h3 class="subtitle-en">A Literary Journey</h3>
+          <p class="urdu-text">
+            عبدالباری ایم کے ایک منفرد ادیب اور مترجم ہیں جو اردو اور انگریزی
+            دونوں زبانوں میں اپنے خیالات کو بیان کرنے کا ہنر رکھتے ہیں۔ ان کی
+            تحریریں روایت اور جدیدیت کے امتزاج کی عکاس ہیں۔
+          </p>
+          <p class="english-text">
+            Abdul Bari M K is a distinguished writer and translator who
+            seamlessly bridges the worlds of Urdu and English literature. With
+            a deep appreciation for classical Urdu poetry and contemporary
+            literary forms, his work reflects a harmonious blend of tradition
+            and modernity.
+          </p>
+          <p class="urdu-text">
+            ان کی تخلیقات نے قارئین کو نہ صرف تفریح فراہم کی بلکہ فکری غذا بھی
+            بخشی۔ ان کا ترجمہ کا کام دو ثقافتوں کے درمیان ایک مضبوط پل ہے۔
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Facts -->
+  <section class="facts-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">اہم معلومات</h2>
+      <p class="section-subtitle animate-on-scroll">Quick Facts</p>
+      
+      <div class="facts-grid">
+        <div class="fact-card animate-on-scroll">
+          <span class="fact-icon">
+            <Icon name="map-pin" size={42} color="var(--primary-color)" />
+          </span>
+          <h3>مقام</h3>
+          <p>نو پنویل، ممبئی</p>
+          <p class="fact-en">New Panvel, Mumbai</p>
+        </div>
+        <div class="fact-card animate-on-scroll">
+          <span class="fact-icon">
+            <Icon name="book-open" size={42} color="var(--primary-color)" />
+          </span>
+          <h3>کتابیں</h3>
+          <p>3+ شائع شدہ</p>
+          <p class="fact-en">3+ Published</p>
+        </div>
+        <div class="fact-card animate-on-scroll">
+          <span class="fact-icon">
+            <Icon name="globe" size={42} color="var(--primary-color)" />
+          </span>
+          <h3>زبانیں</h3>
+          <p>اردو، انگریزی</p>
+          <p class="fact-en">Urdu, English</p>
+        </div>
+        <div class="fact-card animate-on-scroll">
+          <span class="fact-icon">
+            <Icon name="feather" size={42} color="var(--primary-color)" />
+          </span>
+          <h3>مہارت</h3>
+          <p>تحریر، ترجمہ</p>
+          <p class="fact-en">Writing, Translation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="gallery-section bg-gradient-cream">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">تصویری جھلکیاں</h2>
+      <p class="section-subtitle animate-on-scroll">Photo Gallery</p>
+      
+      <div class="photo-gallery">
+        <div class="gallery-item animate-on-scroll">
+          <img src="/images/conference.png" alt="Literary Conference" />
+          <div class="caption">ادبی کانفرنس میں</div>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/images/award.png" alt="Award Ceremony" />
+          <div class="caption">ایوارڈ تقریب</div>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/images/book-launch.png" alt="Book Launch" />
+          <div class="caption">کتاب کی رونمائی</div>
+        </div>
+      </div>
+      
+      <p class="gallery-note animate-on-scroll">
+        مزید تصاویر کے لیے <a href="/life-journey">زندگی کا سفر</a> دیکھیں
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 80px 0;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 180px;
+  }
+
+  .page-title {
+    font-size: 60px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+
+  .page-subtitle {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-family: 'Cinzel', serif;
+  }
+
+  /* About Grid */
+  .about-section {
+    padding: 100px 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .profile-frame {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 20px 60px rgba(139, 38, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-cream);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+
+  .profile-ornament {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    opacity: 0.4;
+  }
+
+  .about-text h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+
+  .subtitle-en {
+    font-size: 22px;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+  }
+
+  .about-text p {
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .english-text {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Facts Section */
+  .facts-section {
+    padding: 100px 0;
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+
+  .fact-card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--accent-color);
+    transition: var(--transition-smooth);
+  }
+
+  .fact-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .fact-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .fact-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .fact-card p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .fact-en {
+    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    padding: 100px 0;
+  }
+
+  .gallery-note {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 18px;
+  }
+
+  .gallery-note a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-image {
+      text-align: center;
+    }
+
+    .profile-frame {
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 42px;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+    }
+  }
+</style>

@@ -1,0 +1,177 @@
+---
+// Header Component with Navigation
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'گھر', labelEn: 'Home' },
+  { href: '/about', label: 'تعارف', labelEn: 'About' },
+  { href: '/books', label: 'کتب', labelEn: 'Books' },
+  { href: '/life-journey', label: 'زندگی', labelEn: 'Life' },
+  { href: '/upcoming', label: 'آئندہ', labelEn: 'Upcoming' },
+  { href: '/translation', label: 'ترجمہ', labelEn: 'Translation' },
+  { href: '/contact', label: 'رابطہ', labelEn: 'Contact' },
+];
+---
+
+<nav class="main-nav">
+  <div class="container nav-container">
+    <a href="/" class="logo">عبدالباری ایم کے</a>
+    
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      {navLinks.map(link => (
+        <li>
+          <a 
+            href={link.href} 
+            class:list={['nav-link', { active: pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) }]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(139, 38, 53, 0.3);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Noto Nastaliq Urdu', serif;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .logo:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 10px;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: var(--accent-color);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 900px) {
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      flex-direction: column;
+      padding: 20px;
+      gap: 15px;
+      transform: translateY(-150%);
+      opacity: 0;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .nav-links.open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .nav-link {
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
+</style>
+
+<script>
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  
+  menuBtn?.addEventListener('click', () => {
+    navLinks?.classList.toggle('open');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks?.classList.remove('open');
+    });
+  });
+</script>

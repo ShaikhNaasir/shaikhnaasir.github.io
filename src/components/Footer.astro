@@ -1,0 +1,111 @@
+---
+// Footer Component
+import Icon from './Icon.astro';
+---
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-ornament">
+      <Icon name="sparkles" size={20} color="var(--accent-color)" />
+      <Icon name="star" size={24} color="var(--accent-color)" />
+      <Icon name="sparkles" size={20} color="var(--accent-color)" />
+    </div>
+    <p class="footer-text">
+      © 2025 Abdul Bari M K | عبدالباری ایم کے | Created by Naze Technology
+    </p>
+    <p class="footer-tagline">
+      الفاظ سے پُل بناتے ہیں، ثقافتوں کو جوڑتے ہیں<br />
+      Building bridges through words, connecting cultures
+    </p>
+    
+    <div class="footer-links">
+      <a href="/" class="footer-link">
+        <Icon name="home" size={16} />
+        گھر
+      </a>
+      <span class="footer-divider">|</span>
+      <a href="/about" class="footer-link">
+        <Icon name="user" size={16} />
+        تعارف
+      </a>
+      <span class="footer-divider">|</span>
+      <a href="/books" class="footer-link">
+        <Icon name="book-open" size={16} />
+        کتب
+      </a>
+      <span class="footer-divider">|</span>
+      <a href="/contact" class="footer-link">
+        <Icon name="mail" size={16} />
+        رابطہ
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .main-footer {
+    background: #1a0a0f;
+    color: var(--text-light);
+    text-align: center;
+    padding: 60px 0 40px;
+  }
+
+  .footer-ornament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .footer-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+  }
+
+  .footer-tagline {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--text-light);
+  }
+
+  .footer-divider {
+    color: var(--secondary-color);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 480px) {
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-divider {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="گھر - Home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-ornament">
+          <Icon name="sparkles" size={28} color="var(--accent-color)" />
+          <Icon name="star" size={32} color="var(--accent-color)" />
+          <Icon name="sparkles" size={28} color="var(--accent-color)" />
+        </div>
+        <h1 class="hero-title animate-fadeInUp">عبدالباری ایم کے</h1>
+        <h2 class="hero-subtitle animate-fadeInUp" style="animation-delay: 0.2s">Abdul Bari M K</h2>
+        <p class="hero-description animate-fadeInUp" style="animation-delay: 0.4s">
+          قلم کا جادوگر، الفاظ کا معمار، اردو ادب کا ایک روشن چراغ<br />
+          A Wordsmith | Literary Translator | Cultural Bridge
+        </p>
+        <div class="hero-buttons animate-fadeInUp" style="animation-delay: 0.6s">
+          <a href="/books" class="btn">
+            <Icon name="book-open" size={20} />
+            میری تخلیقات دریافت کریں
+          </a>
+          <a href="/about" class="btn btn-outline">
+            <Icon name="user" size={20} />
+            تعارف پڑھیں
+          </a>
+        </div>
+        <div class="hero-ornament bottom">
+          <Icon name="sparkles" size={28} color="var(--accent-color)" />
+          <Icon name="star" size={32} color="var(--accent-color)" />
+          <Icon name="sparkles" size={28} color="var(--accent-color)" />
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <Icon name="chevron-down" size={36} color="var(--accent-color)" />
+    </div>
+  </section>
+
+  <!-- Quick Intro Section -->
+  <section class="intro bg-gradient-cream">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-card animate-on-scroll">
+          <span class="intro-icon">
+            <Icon name="book-open" size={48} color="var(--primary-color)" />
+          </span>
+          <h3>کتابیں</h3>
+          <p>شائع شدہ تصانیف اور ادبی شاہکار</p>
+          <a href="/books" class="intro-link">
+            مزید دیکھیں
+            <Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+        <div class="intro-card animate-on-scroll">
+          <span class="intro-icon">
+            <Icon name="languages" size={48} color="var(--primary-color)" />
+          </span>
+          <h3>ترجمہ</h3>
+          <p>اردو اور انگریزی کے درمیان پُل</p>
+          <a href="/translation" class="intro-link">
+            مزید دیکھیں
+            <Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+        <div class="intro-card animate-on-scroll">
+          <span class="intro-icon">
+            <Icon name="award" size={48} color="var(--primary-color)" />
+          </span>
+          <h3>سفر</h3>
+          <p>زندگی کے اہم لمحات اور کامیابیاں</p>
+          <a href="/life-journey" class="intro-link">
+            مزید دیکھیں
+            <Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Quote -->
+  <section class="quote-section bg-gradient-primary">
+    <div class="container">
+      <blockquote class="featured-quote animate-on-scroll">
+        <span class="quote-mark">
+          <Icon name="quote" size={80} color="var(--accent-color)" />
+        </span>
+        <p class="quote-text">
+          الفاظ میں وہ طاقت ہے جو پہاڑوں کو ہلا دے، دلوں کو بدل دے، اور نسلوں کو جوڑ دے۔
+        </p>
+        <footer class="quote-author">— عبدالباری ایم کے</footer>
+      </blockquote>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #8B2635 0%, #A63446 50%, #6B1A27 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: -100px;
+    padding-top: 100px;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" fill="rgba(212,175,55,0.08)"/></svg>');
+    opacity: 0.5;
+  }
+
+  .hero-content {
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+  }
+
+  .hero-ornament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  .hero-ornament.bottom {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+
+  .hero-title {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    font-family: 'Noto Nastaliq Urdu', serif;
+    letter-spacing: 2px;
+    color: var(--text-light);
+  }
+
+  .hero-subtitle {
+    font-size: 36px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    opacity: 0.95;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-15px); }
+    60% { transform: translateX(-50%) translateY(-8px); }
+  }
+
+  /* Intro Section */
+  .intro {
+    padding: 100px 0;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+
+  .intro-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--secondary-color);
+    transition: var(--transition-smooth);
+  }
+
+  .intro-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(139, 38, 53, 0.2);
+  }
+
+  .intro-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .intro-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+
+  .intro-card p {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+  .intro-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .intro-link:hover {
+    color: var(--primary-color);
+    gap: 12px;
+  }
+
+  /* Quote Section */
+  .quote-section {
+    padding: 120px 0;
+  }
+
+  .featured-quote {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--text-light);
+  }
+
+  .quote-mark {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .quote-text {
+    font-size: 32px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+
+  .quote-author {
+    font-size: 20px;
+    color: var(--accent-color);
+    font-style: normal;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 48px;
+    }
+
+    .hero-subtitle {
+      font-size: 24px;
+    }
+
+    .hero-description {
+      font-size: 18px;
+    }
+
+    .quote-text {
+      font-size: 22px;
+    }
+  }
+</style>

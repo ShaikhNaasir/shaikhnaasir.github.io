@@ -1,0 +1,368 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const milestones = [
+  {
+    year: '1990s',
+    title: 'بچپن کے سنہرے دن',
+    titleEn: 'Golden Days of Childhood',
+    description: 'ممبئی کے نو پنویل میں پیدا ہوئے، جہاں کتابوں اور ادب سے محبت کی بنیاد رکھی گئی۔',
+    descriptionEn: 'Born in New Panvel, Mumbai, where the foundation of love for books and literature was laid.',
+    image: '/images/childhood.png'
+  },
+  {
+    year: '2000s',
+    title: 'تعلیمی سفر کا آغاز',
+    titleEn: 'Beginning of Academic Journey',
+    description: 'اردو اور انگریزی ادب میں گہری دلچسپی پیدا ہوئی۔ لکھنے کا شوق یہیں سے شروع ہوا۔',
+    descriptionEn: 'Developed deep interest in Urdu and English literature. The passion for writing began here.',
+    image: '/images/school.png'
+  },
+  {
+    year: '2015',
+    title: 'تعلیمی کامیابی',
+    titleEn: 'Academic Excellence',
+    description: 'یونیورسٹی سے ڈگری حاصل کی اور ادبی تخلیقات کا سلسلہ شروع کیا۔',
+    descriptionEn: 'Graduated from university and began the journey of literary creations.',
+    image: '/images/graduation.png'
+  },
+  {
+    year: '2022',
+    title: 'پہلی کتاب کی اشاعت',
+    titleEn: 'First Book Publication',
+    description: '"خواب و خیال کی دنیا" کی کامیاب اشاعت اور قارئین میں زبردست پذیرائی۔',
+    descriptionEn: 'Successful publication of "World of Dreams and Thoughts" and tremendous reception among readers.',
+    image: '/images/book-launch.png'
+  },
+  {
+    year: '2023',
+    title: 'ادبی اعزازات',
+    titleEn: 'Literary Recognition',
+    description: 'اردو ادب میں نمایاں خدمات پر ایوارڈز اور اعزازات سے نوازا گیا۔',
+    descriptionEn: 'Honored with awards and recognition for outstanding contributions to Urdu literature.',
+    image: '/images/award.png'
+  },
+  {
+    year: '2024',
+    title: 'ادبی کانفرنسز',
+    titleEn: 'Literary Conferences',
+    description: 'قومی اور بین الاقوامی ادبی محافل میں مقرر کے طور پر شرکت اور نوجوان لکھاریوں کی رہنمائی۔',
+    descriptionEn: 'Speaker at national and international literary events, mentoring young writers.',
+    image: '/images/conference.png'
+  }
+];
+---
+
+<BaseLayout title="زندگی کا سفر - Life Journey">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title animate-fadeInUp">زندگی کا سفر</h1>
+      <p class="page-subtitle animate-fadeInUp">Life Journey & Milestones</p>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section bg-gradient-cream">
+    <div class="container">
+      <div class="timeline">
+        {milestones.map((milestone, index) => (
+          <div class={`timeline-item animate-on-scroll ${index % 2 === 0 ? 'left' : 'right'}`}>
+            <div class="timeline-marker">
+              <span class="timeline-year">{milestone.year}</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-image">
+                <img src={milestone.image} alt={milestone.titleEn} />
+              </div>
+              <div class="timeline-text">
+                <h3 class="milestone-title">{milestone.title}</h3>
+                <p class="milestone-title-en">{milestone.titleEn}</p>
+                <p class="milestone-description">
+                  {milestone.description}<br />
+                  <span class="english-text">{milestone.descriptionEn}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- All Photos Gallery -->
+  <section class="all-photos-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">تمام تصاویر</h2>
+      <p class="section-subtitle animate-on-scroll">Photo Gallery</p>
+      
+      <div class="photo-gallery large-gallery">
+        {milestones.map(milestone => (
+          <div class="gallery-item animate-on-scroll">
+            <img src={milestone.image} alt={milestone.titleEn} />
+            <div class="caption">{milestone.title}</div>
+          </div>
+        ))}
+      </div>
+      
+      <p class="upload-note animate-on-scroll">
+        📸 مزید تصاویر جلد شامل کی جائیں گی<br />
+        More photos coming soon
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 80px 0;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 180px;
+  }
+
+  .page-title {
+    font-size: 60px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+
+  .page-subtitle {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Timeline */
+  .timeline-section {
+    padding: 100px 0;
+  }
+
+  .timeline {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-color), var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+    transform: translateX(50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  .timeline-item.left {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-item.right {
+    flex-direction: row;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 10;
+  }
+
+  .timeline-year {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--primary-color), #A63446);
+    color: var(--accent-color);
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 8px 25px rgba(139, 38, 53, 0.4);
+    border: 4px solid var(--accent-color);
+    transition: all 0.4s ease;
+  }
+
+  .timeline-item:hover .timeline-year {
+    transform: scale(1.15);
+  }
+
+  .timeline-content {
+    width: 42%;
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--secondary-color);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  }
+
+  .timeline-item.left .timeline-content {
+    margin-left: auto;
+    margin-right: 8%;
+  }
+
+  .timeline-item.right .timeline-content {
+    margin-right: auto;
+    margin-left: 8%;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(139, 38, 53, 0.2);
+  }
+
+  .timeline-image {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--accent-color);
+  }
+
+  .timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .timeline-content:hover .timeline-image img {
+    transform: scale(1.1);
+  }
+
+  .timeline-text {
+    flex: 1;
+    text-align: right;
+  }
+
+  .milestone-title {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .milestone-title-en {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .milestone-description {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    opacity: 0.85;
+  }
+
+  .english-text {
+    font-family: 'Cormorant Garamond', serif;
+    opacity: 0.7;
+    display: block;
+    margin-top: 8px;
+  }
+
+  /* All Photos Gallery */
+  .all-photos-section {
+    padding: 100px 0;
+  }
+
+  .large-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .large-gallery .gallery-item {
+    aspect-ratio: 16/10;
+  }
+
+  .upload-note {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+    color: var(--primary-color);
+    opacity: 0.8;
+  }
+
+  @media (max-width: 900px) {
+    .timeline::before {
+      right: 30px;
+      transform: none;
+    }
+
+    .timeline-marker {
+      right: 30px;
+      transform: none;
+    }
+
+    .timeline-year {
+      width: 70px;
+      height: 70px;
+      font-size: 14px;
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+      flex-direction: column;
+    }
+
+    .timeline-content,
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+      width: calc(100% - 120px);
+      margin: 0;
+      margin-right: 120px;
+      flex-direction: column;
+    }
+
+    .timeline-image {
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 42px;
+    }
+
+    .milestone-title {
+      font-size: 20px;
+    }
+  }
+</style>

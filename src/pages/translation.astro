@@ -1,0 +1,318 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+
+const services = [
+  {
+    title: 'اردو سے انگریزی',
+    titleEn: 'Urdu to English',
+    description: 'اردو ادب کے شاہکاروں کو انگریزی میں منتقل کرتے ہوئے ان کی روح اور جوہر کو برقرار رکھا جاتا ہے۔ شاعری، نثر، اور افسانوں کا ماہرانہ ترجمہ۔',
+    icon: 'repeat'
+  },
+  {
+    title: 'English to Urdu',
+    titleEn: 'انگریزی سے اردو',
+    description: 'Translating contemporary English literature into Urdu, making global literary treasures accessible to Urdu readers while maintaining cultural nuances and linguistic beauty.',
+    icon: 'file-text'
+  },
+  {
+    title: 'ادبی مشاورت',
+    titleEn: 'Literary Consultation',
+    description: 'نوجوان لکھاریوں اور مترجموں کی رہنمائی، ان کی تحریروں میں بہتری کے لیے تجاویز، اور ادبی تخلیقات پر تنقیدی جائزہ۔',
+    icon: 'users'
+  },
+  {
+    title: 'Cultural Adaptation',
+    titleEn: 'ثقافتی موافقت',
+    description: 'Specialized in adapting content across cultures, ensuring that translated works resonate with target audiences while preserving the original essence and intent.',
+    icon: 'globe'
+  }
+];
+---
+
+<BaseLayout title="ترجمہ کا کام - Translation">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title animate-fadeInUp">ترجمہ کا کام</h1>
+      <p class="page-subtitle animate-fadeInUp">Translation Services</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-section bg-gradient-cream">
+    <div class="container">
+      <div class="services-intro animate-on-scroll">
+        <p class="intro-text">
+          دو زبانوں اور ثقافتوں کے درمیان پُل بناتے ہوئے، میں ادبی ترجمے کی خدمات فراہم کرتا ہوں۔
+          ہر ترجمہ اصل کی روح کو برقرار رکھتے ہوئے نئی زبان میں نئی زندگی دیتا ہے۔
+        </p>
+      </div>
+      
+      <div class="services-grid">
+        {services.map((service, index) => (
+          <article class="service-card animate-on-scroll" style={`animation-delay: ${index * 0.1}s`}>
+            <span class="service-icon">
+              <Icon name={service.icon} size={48} color="var(--primary-color)" />
+            </span>
+            <h2 class="service-title">{service.title}</h2>
+            <p class="service-title-alt">{service.titleEn}</p>
+            <p class="service-description">{service.description}</p>
+            <div class="service-arrow">
+              <Icon name="arrow-right" size={24} color="var(--accent-color)" />
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="languages-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">زبان کے جوڑے</h2>
+      <p class="section-subtitle animate-on-scroll">Language Pairs</p>
+      
+      <div class="language-display animate-on-scroll">
+        <div class="language-item">
+          <Icon name="feather" size={40} color="var(--primary-color)" />
+          <span class="lang-name">اردو</span>
+          <span class="lang-name-en">Urdu</span>
+        </div>
+        <div class="language-arrow">
+          <Icon name="repeat" size={40} color="var(--accent-color)" />
+        </div>
+        <div class="language-item">
+          <Icon name="pen-tool" size={40} color="var(--primary-color)" />
+          <span class="lang-name">English</span>
+          <span class="lang-name-en">انگریزی</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section bg-gradient-primary">
+    <div class="container">
+      <div class="cta-content animate-on-scroll">
+        <h2>ترجمہ کے لیے رابطہ کریں</h2>
+        <p class="cta-subtitle">Get Your Work Translated</p>
+        <p class="cta-text">
+          اپنی ادبی تخلیقات کا ترجمہ کروانے کے لیے ابھی رابطہ کریں
+        </p>
+        <a href="/contact" class="btn">
+          <Icon name="message-circle" size={20} />
+          رابطہ کریں
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 80px 0;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 180px;
+  }
+
+  .page-title {
+    font-size: 60px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+
+  .page-subtitle {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 100px 0;
+  }
+
+  .services-intro {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+
+  .intro-text {
+    font-size: 22px;
+    line-height: 1.9;
+    color: var(--text-dark);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .service-card {
+    background: linear-gradient(135deg, white 0%, #FEFDFB 100%);
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid var(--accent-color);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 25px 60px rgba(139, 38, 53, 0.15);
+  }
+
+  .service-icon {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  .service-title {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+  }
+
+  .service-title-alt {
+    font-size: 16px;
+    color: var(--text-dark);
+    opacity: 0.7;
+    margin-bottom: 20px;
+    font-family: 'Cinzel', serif;
+  }
+
+  .service-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    opacity: 0.85;
+  }
+
+  .service-arrow {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover .service-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Languages Section */
+  .languages-section {
+    padding: 100px 0;
+  }
+
+  .language-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 40px;
+  }
+
+  .language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px 60px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--secondary-color);
+  }
+
+  .lang-name {
+    font-size: 36px;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+
+  .lang-name-en {
+    font-size: 16px;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+  }
+
+  .language-arrow {
+    padding: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 100px 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-light);
+  }
+
+  .cta-content h2 {
+    font-size: 42px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+
+  .cta-subtitle {
+    font-size: 22px;
+    color: var(--accent-color);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 20px;
+  }
+
+  .cta-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  .cta-content .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .language-display {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .language-arrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 42px;
+    }
+
+    .service-title {
+      font-size: 24px;
+    }
+  }
+</style>

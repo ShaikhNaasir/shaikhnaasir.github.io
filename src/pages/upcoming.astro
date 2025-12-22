@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+
+const upcomingBooks = [
+  {
+    title: 'سفر ذات کا',
+    titleEn: 'Journey of Self',
+    description: 'ایک خود نوشت سوانح جو مصنف کے ادبی سفر اور شخصی تجربات کو بیان کرتی ہے۔ یہ کتاب نوجوان لکھاریوں کے لیے رہنما ثابت ہوگی۔',
+    status: 'زیر تکمیل',
+    statusEn: 'Under Progress',
+    progress: 65
+  },
+  {
+    title: 'عصری تناظر میں کلاسیکی ادب',
+    titleEn: 'Classical Literature in Modern Context',
+    description: 'A critical analysis exploring how classical Urdu literature remains relevant in contemporary times. This work bridges centuries of literary tradition with modern sensibilities.',
+    status: 'تحقیق کا مرحلہ',
+    statusEn: 'Research Phase',
+    progress: 35
+  },
+  {
+    title: 'نثری نظمیں: ایک نیا تجربہ',
+    titleEn: 'Prose Poems: A New Experiment',
+    description: 'نثر اور نظم کے امتزاج پر مبنی ایک منفرد تخلیق جو اردو ادب میں ایک نیا باب کھولے گی۔',
+    status: '2025 میں متوقع',
+    statusEn: 'Expected 2025',
+    progress: 20
+  }
+];
+---
+
+<BaseLayout title="آنے والی تصانیف - Upcoming">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title animate-fadeInUp">آنے والی تصانیف</h1>
+      <p class="page-subtitle animate-fadeInUp">Upcoming Works</p>
+    </div>
+  </section>
+
+  <!-- Upcoming Books List -->
+  <section class="upcoming-section bg-gradient-cream">
+    <div class="container">
+      <div class="upcoming-list">
+        {upcomingBooks.map((book, index) => (
+          <article class="upcoming-card animate-on-scroll" style={`animation-delay: ${index * 0.15}s`}>
+            <div class="upcoming-header">
+              <span class="upcoming-number">0{index + 1}</span>
+              <div class="upcoming-status">
+                <span class="status-badge">
+                  <Icon name="clock" size={14} color="white" />
+                  {book.status}
+                </span>
+                <span class="status-en">{book.statusEn}</span>
+              </div>
+            </div>
+            <h2 class="upcoming-title">{book.title}</h2>
+            <p class="upcoming-title-en">{book.titleEn}</p>
+            <p class="upcoming-description">{book.description}</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style={`width: ${book.progress}%`}></div>
+              <span class="progress-text">{book.progress}% مکمل</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="newsletter-section bg-gradient-primary">
+    <div class="container">
+      <div class="newsletter-content animate-on-scroll">
+        <span class="newsletter-icon">
+          <Icon name="mail" size={60} color="var(--accent-color)" />
+        </span>
+        <h2>آگاہ رہیں</h2>
+        <p class="newsletter-subtitle">Stay Updated</p>
+        <p class="newsletter-text">
+          نئی کتابوں اور ادبی سرگرمیوں کی خبریں حاصل کرنے کے لیے رابطے میں رہیں
+        </p>
+        <a href="/contact" class="btn">
+          <Icon name="send" size={20} />
+          رابطہ کریں
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 80px 0;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 180px;
+  }
+
+  .page-title {
+    font-size: 60px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+
+  .page-subtitle {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Upcoming Section */
+  .upcoming-section {
+    padding: 100px 0;
+  }
+
+  .upcoming-list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .upcoming-card {
+    background: white;
+    padding: 40px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    border-right: 6px solid var(--accent-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .upcoming-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: linear-gradient(135deg, rgba(139, 38, 53, 0.03), rgba(212, 175, 55, 0.03));
+    transition: width 0.5s ease;
+  }
+
+  .upcoming-card:hover {
+    transform: translateX(-15px);
+    box-shadow: 0 15px 50px rgba(139, 38, 53, 0.15);
+  }
+
+  .upcoming-card:hover::before {
+    width: 100%;
+  }
+
+  .upcoming-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .upcoming-number {
+    font-size: 48px;
+    font-family: 'Cinzel', serif;
+    color: var(--secondary-color);
+    opacity: 0.4;
+    font-weight: 700;
+  }
+
+  .upcoming-status {
+    text-align: left;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+
+  .status-en {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+  }
+
+  .upcoming-title {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .upcoming-title-en {
+    font-size: 18px;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .upcoming-description {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .progress-bar {
+    height: 12px;
+    background: rgba(201, 169, 97, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 10px;
+    transition: width 1s ease;
+  }
+
+  .progress-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+
+  /* Newsletter Section */
+  .newsletter-section {
+    padding: 100px 0;
+  }
+
+  .newsletter-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-light);
+  }
+
+  .newsletter-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 48px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+
+  .newsletter-subtitle {
+    font-size: 22px;
+    color: var(--accent-color);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 20px;
+  }
+
+  .newsletter-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  .newsletter-content .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 42px;
+    }
+
+    .upcoming-title {
+      font-size: 24px;
+    }
+
+    .upcoming-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+</style>
