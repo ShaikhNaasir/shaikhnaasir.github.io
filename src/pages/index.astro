@@ -1,105 +1,169 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
+
+// SEO-optimized page description
+const pageDescription = "عبدالباری ایم کے کی سرکاری ویب سائٹ - اردو ادیب، مترجم اور شاعر۔ Official website of Abdul Bari M K - Urdu writer, translator and poet from Mumbai, India. Explore books, translations and literary works.";
+const pageKeywords = "Abdul Bari MK, عبدالباری ایم کے, Urdu writer, اردو ادیب, Mumbai author, Urdu books, Islamic literature, Urdu poetry, literary translator";
 ---
 
-<BaseLayout title="گھر - Home">
+<BaseLayout 
+  title="گھر - Home" 
+  description={pageDescription}
+  keywords={pageKeywords}
+>
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-bg-pattern"></div>
+  <section class="hero" aria-label="Welcome Banner">
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-ornament">
-          <Icon name="sparkles" size={28} color="var(--accent-color)" />
-          <Icon name="star" size={32} color="var(--accent-color)" />
-          <Icon name="sparkles" size={28} color="var(--accent-color)" />
+        <div class="hero-ornament" aria-hidden="true">
+          <Icon name="sparkles" size={24} color="var(--accent-color)" />
+          <Icon name="star" size={28} color="var(--accent-color)" />
+          <Icon name="sparkles" size={24} color="var(--accent-color)" />
         </div>
+        
         <h1 class="hero-title animate-fadeInUp">عبدالباری ایم کے</h1>
-        <h2 class="hero-subtitle animate-fadeInUp" style="animation-delay: 0.2s">Abdul Bari M K</h2>
+        <p class="hero-subtitle animate-fadeInUp" style="animation-delay: 0.2s">Abdul Bari M K</p>
+        
         <p class="hero-description animate-fadeInUp" style="animation-delay: 0.4s">
           قلم کا جادوگر، الفاظ کا معمار، اردو ادب کا ایک روشن چراغ<br />
-          A Wordsmith | Literary Translator | Cultural Bridge
+          <span lang="en">A Wordsmith | Literary Translator | Cultural Bridge</span>
         </p>
+        
         <div class="hero-buttons animate-fadeInUp" style="animation-delay: 0.6s">
-          <a href="/books" class="btn">
-            <Icon name="book-open" size={20} />
-            میری تخلیقات دریافت کریں
+          <a href="/books" class="btn btn-primary">
+            <Icon name="book-open" size={18} />
+            میری تخلیقات
           </a>
           <a href="/about" class="btn btn-outline">
-            <Icon name="user" size={20} />
-            تعارف پڑھیں
+            <Icon name="user" size={18} />
+            تعارف
           </a>
         </div>
-        <div class="hero-ornament bottom">
-          <Icon name="sparkles" size={28} color="var(--accent-color)" />
-          <Icon name="star" size={32} color="var(--accent-color)" />
-          <Icon name="sparkles" size={28} color="var(--accent-color)" />
+        
+        <div class="hero-ornament bottom" aria-hidden="true">
+          <Icon name="sparkles" size={24} color="var(--accent-color)" />
+          <Icon name="star" size={28} color="var(--accent-color)" />
+          <Icon name="sparkles" size={24} color="var(--accent-color)" />
         </div>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <Icon name="chevron-down" size={36} color="var(--accent-color)" />
+    
+    <div class="scroll-indicator" aria-label="Scroll down">
+      <Icon name="chevron-down" size={28} color="var(--accent-color)" />
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section" aria-label="Achievements">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item animate-on-scroll">
+          <Icon name="book-open" size={32} color="var(--accent-color)" />
+          <span class="stat-number">3+</span>
+          <span class="stat-label">شائع شدہ کتابیں</span>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <Icon name="languages" size={32} color="var(--accent-color)" />
+          <span class="stat-number">50+</span>
+          <span class="stat-label">تراجم</span>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <Icon name="award" size={32} color="var(--accent-color)" />
+          <span class="stat-number">5+</span>
+          <span class="stat-label">ایوارڈز</span>
+        </div>
+        <div class="stat-item animate-on-scroll">
+          <Icon name="users" size={32} color="var(--accent-color)" />
+          <span class="stat-number">1K+</span>
+          <span class="stat-label">قارئین</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Quick Intro Section -->
-  <section class="intro bg-gradient-cream">
+  <section class="intro bg-gradient-cream" aria-label="Services Overview">
     <div class="container">
       <div class="intro-grid">
-        <div class="intro-card animate-on-scroll">
-          <span class="intro-icon">
-            <Icon name="book-open" size={48} color="var(--primary-color)" />
-          </span>
-          <h3>کتابیں</h3>
+        <article class="intro-card animate-on-scroll">
+          <Icon name="book-open" size={40} color="var(--primary-color)" />
+          <h2>کتابیں</h2>
           <p>شائع شدہ تصانیف اور ادبی شاہکار</p>
-          <a href="/books" class="intro-link">
+          <a href="/books" class="intro-link" aria-label="View all books">
             مزید دیکھیں
-            <Icon name="arrow-right" size={18} />
+            <Icon name="arrow-right" size={16} />
           </a>
-        </div>
-        <div class="intro-card animate-on-scroll">
-          <span class="intro-icon">
-            <Icon name="languages" size={48} color="var(--primary-color)" />
-          </span>
-          <h3>ترجمہ</h3>
+        </article>
+        
+        <article class="intro-card animate-on-scroll">
+          <Icon name="languages" size={40} color="var(--primary-color)" />
+          <h2>ترجمہ</h2>
           <p>اردو اور انگریزی کے درمیان پُل</p>
-          <a href="/translation" class="intro-link">
+          <a href="/translation" class="intro-link" aria-label="View translation services">
             مزید دیکھیں
-            <Icon name="arrow-right" size={18} />
+            <Icon name="arrow-right" size={16} />
           </a>
-        </div>
-        <div class="intro-card animate-on-scroll">
-          <span class="intro-icon">
-            <Icon name="award" size={48} color="var(--primary-color)" />
-          </span>
-          <h3>سفر</h3>
+        </article>
+        
+        <article class="intro-card animate-on-scroll">
+          <Icon name="award" size={40} color="var(--primary-color)" />
+          <h2>سفر</h2>
           <p>زندگی کے اہم لمحات اور کامیابیاں</p>
-          <a href="/life-journey" class="intro-link">
+          <a href="/life-journey" class="intro-link" aria-label="View life journey">
             مزید دیکھیں
-            <Icon name="arrow-right" size={18} />
+            <Icon name="arrow-right" size={16} />
           </a>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Featured Quote -->
-  <section class="quote-section bg-gradient-primary">
+  <section class="quote-section bg-gradient-primary" aria-label="Featured Quote">
     <div class="container">
-      <blockquote class="featured-quote animate-on-scroll">
-        <span class="quote-mark">
-          <Icon name="quote" size={80} color="var(--accent-color)" />
-        </span>
-        <p class="quote-text">
+      <figure class="featured-quote animate-on-scroll">
+        <Icon name="quote" size={60} color="var(--accent-color)" class="quote-icon" />
+        <blockquote class="quote-text">
           الفاظ میں وہ طاقت ہے جو پہاڑوں کو ہلا دے، دلوں کو بدل دے، اور نسلوں کو جوڑ دے۔
-        </p>
-        <footer class="quote-author">— عبدالباری ایم کے</footer>
-      </blockquote>
+        </blockquote>
+        <figcaption class="quote-author">— عبدالباری ایم کے</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="quick-links bg-gradient-cream" aria-label="Quick Navigation">
+    <div class="container">
+      <div class="links-grid">
+        <a href="/books" class="link-card animate-on-scroll">
+          <Icon name="book-open" size={36} color="var(--primary-color)" />
+          <h3>کتب</h3>
+          <span>Books</span>
+        </a>
+        <a href="/life-journey" class="link-card animate-on-scroll">
+          <Icon name="clock" size={36} color="var(--primary-color)" />
+          <h3>زندگی</h3>
+          <span>Life Journey</span>
+        </a>
+        <a href="/upcoming" class="link-card animate-on-scroll">
+          <Icon name="calendar" size={36} color="var(--primary-color)" />
+          <h3>آئندہ</h3>
+          <span>Upcoming</span>
+        </a>
+        <a href="/contact" class="link-card animate-on-scroll">
+          <Icon name="mail" size={36} color="var(--primary-color)" />
+          <h3>رابطہ</h3>
+          <span>Contact</span>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  /* Hero Section */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -114,12 +178,9 @@ import Icon from '../components/Icon.astro';
 
   .hero-bg-pattern {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" fill="rgba(212,175,55,0.08)"/></svg>');
-    opacity: 0.5;
+    inset: 0;
+    background-image: url('data:image/svg+xml,<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg"><path d="M40 8 L48 32 L72 32 L52 48 L60 72 L40 56 L20 72 L28 48 L8 32 L32 32 Z" fill="rgba(212,175,55,0.06)"/></svg>');
+    opacity: 0.7;
   }
 
   .hero-content {
@@ -127,7 +188,8 @@ import Icon from '../components/Icon.astro';
     color: var(--text-light);
     position: relative;
     z-index: 2;
-    padding: 40px;
+    padding: 40px 20px;
+    max-width: 900px;
   }
 
   .hero-ornament {
@@ -145,34 +207,34 @@ import Icon from '../components/Icon.astro';
   }
 
   .hero-title {
-    font-size: 80px;
+    font-size: clamp(48px, 8vw, 80px);
     font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: 'Noto Nastaliq Urdu', serif;
-    letter-spacing: 2px;
     color: var(--text-light);
+    line-height: 1.2;
   }
 
   .hero-subtitle {
-    font-size: 36px;
+    font-size: clamp(24px, 4vw, 36px);
     color: var(--accent-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-family: 'Cinzel', serif;
     font-weight: 600;
   }
 
   .hero-description {
-    font-size: 22px;
-    max-width: 800px;
-    margin: 0 auto 40px;
+    font-size: clamp(16px, 2.5vw, 22px);
+    max-width: 700px;
+    margin: 0 auto 35px;
     line-height: 1.8;
     opacity: 0.95;
   }
 
   .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -180,127 +242,239 @@ import Icon from '../components/Icon.astro';
   .hero-buttons .btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    background: var(--accent-color);
+    color: var(--text-dark);
   }
 
   .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
   }
 
   @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-15px); }
-    60% { transform: translateX(-50%) translateY(-8px); }
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+
+  /* Stats Section */
+  .stats-section {
+    background: #1a0a0f;
+    padding: 50px 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .stat-item {
+    text-align: center;
+    color: var(--text-light);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    color: var(--accent-color);
+    margin: 10px 0 5px;
+  }
+
+  .stat-label {
+    font-size: 16px;
+    opacity: 0.85;
   }
 
   /* Intro Section */
   .intro {
-    padding: 100px 0;
+    padding: 80px 0;
   }
 
   .intro-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
   }
 
   .intro-card {
     background: white;
-    padding: 40px;
+    padding: 35px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     border: 2px solid var(--secondary-color);
-    transition: var(--transition-smooth);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .intro-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(139, 38, 53, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(139, 38, 53, 0.15);
   }
 
-  .intro-icon {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .intro-card h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
+  .intro-card h2 {
+    font-size: 26px;
+    margin: 20px 0 12px;
     color: var(--primary-color);
   }
 
   .intro-card p {
-    font-size: 16px;
+    font-size: 15px;
     opacity: 0.8;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .intro-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: gap 0.3s ease;
   }
 
   .intro-link:hover {
-    color: var(--primary-color);
-    gap: 12px;
+    gap: 10px;
   }
 
   /* Quote Section */
   .quote-section {
-    padding: 120px 0;
+    padding: 80px 0;
   }
 
   .featured-quote {
     text-align: center;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     color: var(--text-light);
   }
 
-  .quote-mark {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
+  .quote-icon {
+    display: block;
+    margin: 0 auto 20px;
+    opacity: 0.8;
   }
 
   .quote-text {
-    font-size: 32px;
+    font-size: clamp(22px, 4vw, 32px);
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    font-style: italic;
   }
 
   .quote-author {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--accent-color);
-    font-style: normal;
   }
 
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 48px;
-    }
+  /* Quick Links */
+  .quick-links {
+    padding: 60px 0;
+  }
 
-    .hero-subtitle {
-      font-size: 24px;
-    }
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 
-    .hero-description {
-      font-size: 18px;
-    }
+  .link-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-    .quote-text {
-      font-size: 22px;
+  .link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(139, 38, 53, 0.12);
+  }
+
+  .link-card h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin: 15px 0 5px;
+  }
+
+  .link-card span {
+    font-size: 12px;
+    color: var(--text-dark);
+    opacity: 0.6;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .links-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .links-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    
+    .link-card {
+      padding: 20px;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /* Animation classes */
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fadeInUp {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    
+    .scroll-indicator {
+      animation: none;
     }
   }
 </style>
