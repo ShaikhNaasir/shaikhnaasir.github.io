@@ -6,9 +6,18 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
 }
 
-const { title, description = 'عبدالباری ایم کے - قلم کا جادوگر، الفاظ کا معمار، اردو ادب کا ایک روشن چراغ' } = Astro.props;
+const { 
+  title, 
+  description = 'عبدالباری ایم کے - ادیب، مترجم اور اردو ادب کا ایک روشن چراغ۔ Abdul Bari M K - Writer, Translator & Literary Luminary from Mumbai, India.', 
+  keywords = 'Abdul Bari MK, عبدالباری, Urdu writer, Urdu translator, اردو ادیب, اردو مترجم, Mumbai author, Islamic literature, Urdu poetry',
+  ogImage = '/images/og-image.png'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://abdulbarimk.com');
 ---
 
 <!DOCTYPE html>
@@ -16,9 +25,41 @@ const { title, description = 'عبدالباری ایم کے - قلم کا جا�
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title} | عبدالباری ایم کے - Abdul Bari M K</title>
+    <meta name="title" content={`${title} | عبدالباری ایم کے`} />
     <meta name="description" content={description} />
-    <title>{title} | عبدالباری ایم کے</title>
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Abdul Bari M K - عبدالباری ایم کے" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | عبدالباری ایم کے`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="ur_PK" />
+    <meta property="og:site_name" content="Abdul Bari M K - عبدالباری ایم کے" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | عبدالباری ایم کے`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Fonts with display swap for better performance -->
     <link
       href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -27,17 +68,32 @@ const { title, description = 'عبدالباری ایم کے - قلم کا جا�
       href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdul Bari M K",
+      "alternateName": "عبدالباری ایم کے",
+      "description": "Urdu writer, translator, and literary figure from Mumbai, India",
+      "url": "https://abdulbarimk.com",
+      "sameAs": [],
+      "jobTitle": "Writer & Translator",
+      "knowsLanguage": ["ur", "en"],
+      "nationality": "Indian"
+    })} />
   </head>
   <body>
-    <div class="pattern-overlay"></div>
+    <div class="pattern-overlay" aria-hidden="true"></div>
     <Header />
-    <main class="page-content">
+    <main class="page-content" id="main-content">
       <slot />
     </main>
     <Footer />
     
+    <!-- Scroll Animation Script - Deferred for performance -->
     <script>
-      // Scroll animations
+      // Use Intersection Observer for scroll animations (more performant)
       const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -47,13 +103,23 @@ const { title, description = 'عبدالباری ایم کے - قلم کا جا�
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Stop observing once visible
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-      });
+      // Defer initialization
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAnimations);
+      } else {
+        initAnimations();
+      }
+
+      function initAnimations() {
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
+      }
     </script>
   </body>
 </html>
@@ -62,11 +128,20 @@ const { title, description = 'عبدالباری ایم کے - قلم کا جا�
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 </style>
