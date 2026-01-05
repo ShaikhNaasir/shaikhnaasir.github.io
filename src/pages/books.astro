@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+
+const books = [
+  {
+    title: 'خواب و خیال کی دنیا',
+    titleEn: 'World of Dreams and Thoughts',
+    description: 'ایک شاعرانہ مجموعہ جو زندگی کے مختلف پہلوؤں کو خوبصورت انداز میں بیان کرتا ہے۔ یہ کتاب روایتی اور جدید غزلوں کا حسین امتزاج ہے۔',
+    year: '2022',
+    icon: 'book-open',
+    category: 'شاعری'
+  },
+  {
+    title: 'لفظوں کی بارش',
+    titleEn: 'Rain of Words',
+    description: 'ایک افسانوی مجموعہ جو معاشرتی مسائل اور انسانی جذبات کو حقیقت پسندی کے ساتھ پیش کرتا ہے۔ ہر افسانہ ایک نیا تجربہ اور نیا درس ہے۔',
+    year: '2023',
+    icon: 'scroll',
+    category: 'افسانے'
+  },
+  {
+    title: 'ترجمہ: کلاسیکی شاہکار',
+    titleEn: 'Translation: Classical Masterpieces',
+    description: 'مغربی ادب کے منتخب شاہکاروں کا اردو ترجمہ، جو زبان اور ثقافت کی باریکیوں کو برقرار رکھتے ہوئے اصل جذبات کو منتقل کرتا ہے۔',
+    year: '2024',
+    icon: 'languages',
+    category: 'ترجمہ'
+  }
+];
+---
+
+<BaseLayout title="کتب - Books">
+  <!-- Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title animate-fadeInUp">شائع شدہ تصانیف</h1>
+      <p class="page-subtitle animate-fadeInUp">Published Works</p>
+    </div>
+  </section>
+
+  <!-- Books Grid -->
+  <section class="books-section bg-gradient-cream">
+    <div class="container">
+      <div class="books-grid">
+        {books.map((book, index) => (
+          <article class="book-card animate-on-scroll" style={`animation-delay: ${index * 0.1}s`}>
+            <span class="book-category">{book.category}</span>
+            <span class="book-icon">
+              <Icon name={book.icon} size={60} color="var(--primary-color)" />
+            </span>
+            <h2 class="book-title">{book.title}</h2>
+            <p class="book-title-en">{book.titleEn}</p>
+            <p class="book-description">{book.description}</p>
+            <div class="book-footer">
+              <span class="book-year">{book.year}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading Quote -->
+  <section class="quote-section bg-gradient-primary">
+    <div class="container">
+      <blockquote class="book-quote animate-on-scroll">
+        <span class="quote-icon">
+          <Icon name="quote" size={60} color="var(--accent-color)" />
+        </span>
+        <p>"ہر کتاب ایک نئی دنیا کا دروازہ ہے"</p>
+        <footer>— عبدالباری ایم کے</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA to Upcoming -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content animate-on-scroll">
+        <h2>آنے والی تصانیف</h2>
+        <p>نئے منصوبوں اور آئندہ کتابوں کے بارے میں جانیں</p>
+        <a href="/upcoming" class="btn">
+          <Icon name="clock" size={20} />
+          دیکھیں
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 80px 0;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 180px;
+  }
+
+  .page-title {
+    font-size: 60px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+
+  .page-subtitle {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Books Section */
+  .books-section {
+    padding: 100px 0;
+  }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .book-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+  }
+
+  .book-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  }
+
+  .book-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 70px rgba(139, 38, 53, 0.2);
+  }
+
+  .book-category {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  .book-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .book-title {
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .book-title-en {
+    font-size: 18px;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .book-description {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--text-dark);
+    opacity: 0.85;
+    margin-bottom: 25px;
+  }
+
+  .book-footer {
+    border-top: 1px solid var(--secondary-color);
+    padding-top: 20px;
+  }
+
+  .book-year {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--accent-color);
+    color: var(--text-dark);
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* Quote Section */
+  .quote-section {
+    padding: 80px 0;
+  }
+
+  .book-quote {
+    text-align: center;
+    color: var(--text-light);
+  }
+
+  .quote-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .book-quote p {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .book-quote footer {
+    font-size: 20px;
+    color: var(--accent-color);
+    font-style: normal;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 100px 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .cta-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+  }
+
+  .cta-content .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 42px;
+    }
+
+    .book-title {
+      font-size: 24px;
+    }
+
+    .book-quote p {
+      font-size: 24px;
+    }
+
+    .books-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
