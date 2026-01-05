@@ -1,121 +1,102 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Icon from '../components/Icon.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
 
 // SEO-optimized page description
-const pageDescription = "عبدالباری ایم کے کی سرکاری ویب سائٹ - اردو ادیب، مترجم اور شاعر۔ Official website of Abdul Bari M K - Urdu writer, translator and poet from Mumbai, India. Explore books, translations and literary works.";
-const pageKeywords = "Abdul Bari MK, عبدالباری ایم کے, Urdu writer, اردو ادیب, Mumbai author, Urdu books, Islamic literature, Urdu poetry, literary translator";
+const pageDescription =
+  "عبدالباری ایم کے کی سرکاری ویب سائٹ - اردو ادیب، مترجم اور شاعر۔ Official website of Abdul Bari M K - Urdu writer, translator and poet from Mumbai, India. Explore books, translations and literary works.";
+const pageKeywords =
+  "Abdul Bari MK, عبدالباری ایم کے, Urdu writer, اردو ادیب, Mumbai author, Urdu books, Islamic literature, Urdu poetry, literary translator";
 ---
 
-<BaseLayout 
-  title="گھر - Home" 
+<BaseLayout
+  title="گھر - Home"
   description={pageDescription}
   keywords={pageKeywords}
 >
   <!-- Hero Section with Author Image and Quote -->
-  <section class="min-h-screen w-full flex flex-col lg:flex-row items-center justify-center relative bg-gradient-to-br from-[#FDF8F6] via-[#F9EDE9] to-[#F5E3DD] pt-20 sm:pt-24 md:pt-28 lg:pt-32 px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20" aria-label="Welcome Banner">
-    <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20">
-      
+  <section
+    class="min-h-screen w-full flex flex-col lg:flex-row items-center justify-center relative bg-gradient-to-br from-[#FDF8F6] via-[#F9EDE9] to-[#F5E3DD] pt-20 sm:pt-24 md:pt-28 lg:pt-32 px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20"
+    aria-label="Welcome Banner"
+  >
+    <div
+      class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20"
+    >
       <!-- Left Side - Author Image -->
-      <div class="flex-1 w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-1 animate-fadeIn">
-        <div class="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]">
+      <div
+        class="flex-1 w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-1 animate-fadeIn"
+      >
+        <div
+          class="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]"
+        >
           <div class="relative">
-            <img 
-              src="/images/author.png" 
-              alt="Abdul Bari M K - Urdu Writer, Translator and Poet" 
+            <img
+              src="/images/author.png"
+              alt="Abdul Bari M K - Urdu Writer, Translator and Poet"
               class="w-full h-auto object-contain rounded-2xl shadow-2xl"
               loading="eager"
             />
-            <div class="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-gradient-to-br from-[#D4AF37] to-[#C9A961] rounded-full opacity-20 blur-2xl"></div>
-            <div class="absolute -top-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gradient-to-br from-[#8B2635] to-[#6B1A27] rounded-full opacity-10 blur-3xl"></div>
+            <div
+              class="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-gradient-to-br from-[#D4AF37] to-[#C9A961] rounded-full opacity-20 blur-2xl"
+            >
+            </div>
+            <div
+              class="absolute -top-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gradient-to-br from-[#8B2635] to-[#6B1A27] rounded-full opacity-10 blur-3xl"
+            >
+            </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Right Side - Quote & Author Info -->
-      <div class="flex-1 w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-right direction-rtl order-1 lg:order-2 px-2 sm:px-4 md:px-6 lg:px-0">
-        
+      <div
+        class="flex-1 w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-right direction-rtl order-1 lg:order-2 px-2 sm:px-4 md:px-6 lg:px-0"
+      >
         <!-- Author Quote -->
-        <blockquote class="w-full max-w-2xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 animate-fadeInUp">
-          <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[3.5rem] font-['Aref_Ruqaa_Ink',serif] font-semibold leading-[1.8] md:leading-[2] text-[#8B2635] mb-4 sm:mb-5 md:mb-6 break-words">
+        <blockquote
+          class="w-full max-w-2xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 animate-fadeInUp"
+        >
+          <div
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[3.5rem] font-['Aref_Ruqaa_Ink',serif] font-semibold leading-[1.8] md:leading-[2] text-[#8B2635] mb-4 sm:mb-5 md:mb-6 break-words"
+          >
             اس کائنات کی ہر شے اپنے تخلیق کار کی فرمانبردار ہے
           </div>
-          <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[3.5rem] font-['Aref_Ruqaa_Ink',serif] font-semibold leading-[1.8] md:leading-[2] text-[#8B2635] break-words">
+          <div
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[3.5rem] font-['Aref_Ruqaa_Ink',serif] font-semibold leading-[1.8] md:leading-[2] text-[#8B2635] break-words"
+          >
             سوائے اشرف المخلوقات کہلانے والے انسان کے؛
             <br class="hidden sm:block" />
             وہی ناشکرا اور نافرمان ہے
           </div>
         </blockquote>
-        
+
         <!-- Decorative Line -->
-        <div class="w-20 sm:w-24 md:w-28 h-1 bg-gradient-to-r from-[#D4AF37] to-[#C9A961] mb-4 sm:mb-5 md:mb-6 lg:mb-8 rounded-full"></div>
-        
+        <div
+          class="w-20 sm:w-24 md:w-28 h-1 bg-gradient-to-r from-[#D4AF37] to-[#C9A961] mb-4 sm:mb-5 md:mb-6 lg:mb-8 rounded-full"
+        >
+        </div>
+
         <!-- Author Name -->
-        <div class="mb-4 sm:mb-6 md:mb-8 lg:mb-10 animate-fadeInUp w-full" style="animation-delay: 0.2s">
-          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-['Noto_Nastaliq_Urdu',serif] font-bold text-[#8B2635] mb-2 sm:mb-3 leading-tight break-words">
+        <div
+          class="mb-4 sm:mb-6 md:mb-8 lg:mb-10 animate-fadeInUp w-full"
+          style="animation-delay: 0.2s"
+        >
+          <h1
+            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-['Noto_Nastaliq_Urdu',serif] font-bold text-[#8B2635] mb-2 sm:mb-3 leading-tight break-words"
+          >
             عبدالباری ایم کے
           </h1>
-          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-['Cinzel',serif] font-semibold text-[#8B2635] opacity-85 tracking-wider mb-1 sm:mb-2">
+          <br />
+          <p
+            class="text-base sm:text-lg md:text-xl lg:text-2xl font-['Cinzel',serif] font-semibold text-[#8B2635] opacity-85 tracking-wider mb-1 sm:mb-2"
+          >
             Abdul Bari M K
           </p>
-          <p class="text-xs sm:text-sm md:text-base lg:text-lg text-[#8B2635] opacity-70 tracking-widest">
-            ادیب ・ مترجم ・ شاعر
+          <p
+            class="text-xs sm:text-sm md:text-base lg:text-lg text-[#8B2635] opacity-70 tracking-widest"
+          >
+            ادیب ・ مترجم ・ مصنف
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Author Images Gallery Section -->
-  <section class="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8]" aria-label="Photo Gallery">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll mb-3 sm:mb-4 md:mb-5">زندگی کے اہم لمحات</h2>
-      <p class="section-subtitle animate-on-scroll mb-8 sm:mb-10 md:mb-12 lg:mb-16">Life Moments</p>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full">
-        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll hover:-translate-y-2 w-full">
-          <div class="aspect-[4/3] overflow-hidden w-full">
-            <img 
-              src="/images/conference.png" 
-              alt="Literary Conference" 
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <p class="text-base sm:text-lg md:text-xl font-semibold">ادبی کانفرنس</p>
-            <p class="text-xs sm:text-sm md:text-base opacity-90">Literary Conference</p>
-          </div>
-        </div>
-        
-        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll hover:-translate-y-2 w-full">
-          <div class="aspect-[4/3] overflow-hidden w-full">
-            <img 
-              src="/images/award.png" 
-              alt="Award Ceremony" 
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <p class="text-base sm:text-lg md:text-xl font-semibold">ایوارڈ تقریب</p>
-            <p class="text-xs sm:text-sm md:text-base opacity-90">Award Ceremony</p>
-          </div>
-        </div>
-        
-        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll hover:-translate-y-2 sm:col-span-2 lg:col-span-1 w-full">
-          <div class="aspect-[4/3] overflow-hidden w-full">
-            <img 
-              src="/images/book-launch.png" 
-              alt="Book Launch" 
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <p class="text-base sm:text-lg md:text-xl font-semibold">کتاب کی رونمائی</p>
-            <p class="text-xs sm:text-sm md:text-base opacity-90">Book Launch</p>
-          </div>
         </div>
       </div>
     </div>
