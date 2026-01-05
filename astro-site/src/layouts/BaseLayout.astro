@@ -65,7 +65,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://abdulbar
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Aref+Ruqaa+Ink:wght@400;700&display=swap"
       rel="stylesheet"
     />
     
@@ -86,7 +86,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://abdulbar
   <body>
     <div class="pattern-overlay" aria-hidden="true"></div>
     <Header />
-    <main class="pt-[100px] min-h-screen md:pt-20" id="main-content">
+    <main class="pt-16 sm:pt-20 md:pt-24 min-h-screen" id="main-content">
       <slot />
     </main>
     <Footer />

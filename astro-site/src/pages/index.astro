@@ -12,189 +12,124 @@ const pageKeywords = "Abdul Bari MK, عبدالباری ایم کے, Urdu writer
   description={pageDescription}
   keywords={pageKeywords}
 >
-  <!-- Full Page Hero Section -->
-  <section class="min-h-screen w-full flex items-stretch relative overflow-hidden -mt-[100px] pt-[100px] bg-gradient-to-br from-[#FDF8F6] via-[#F9EDE9] to-[#F5E3DD] max-md:pt-[90px] max-md:pb-5 max-[500px]:pt-20 max-[500px]:pb-4" aria-label="Welcome Banner">
-    <div class="flex items-stretch justify-between w-full max-w-full min-h-[calc(100vh-100px)] max-[500px]:min-h-[calc(100vh-95px)] max-[500px]:px-2">
+  <!-- Hero Section with Author Image and Quote -->
+  <section class="min-h-screen w-full flex flex-col lg:flex-row items-center justify-center relative bg-gradient-to-br from-[#FDF8F6] via-[#F9EDE9] to-[#F5E3DD] pt-20 sm:pt-24 md:pt-28 lg:pt-32 px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20" aria-label="Welcome Banner">
+    <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20">
+      
       <!-- Left Side - Author Image -->
-      <div class="flex-[0_0_50%] flex items-end justify-center p-0 overflow-visible relative max-lg:flex-[0_0_45%] max-md:flex-[0_0_40%] max-[768px]:flex-[0_0_30%] max-[500px]:flex-[0_0_28%] animate-fadeIn">
-        <div class="absolute bottom-0 left-0 right-0 h-full flex items-end justify-center">
-          <img 
-            src="/images/author.png" 
-            alt="Abdul Bari M K - Urdu Writer, Translator and Poet" 
-            class="w-auto h-[95%] max-h-[calc(100vh-100px)] block object-contain object-[center_bottom] max-[768px]:h-[40%] max-[500px]:h-[75%]"
-            loading="eager"
-          />
+      <div class="flex-1 w-full lg:w-1/2 flex items-center justify-center order-2 lg:order-1 animate-fadeIn">
+        <div class="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px]">
+          <div class="relative">
+            <img 
+              src="/images/author.png" 
+              alt="Abdul Bari M K - Urdu Writer, Translator and Poet" 
+              class="w-full h-auto object-contain rounded-2xl shadow-2xl"
+              loading="eager"
+            />
+            <div class="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-gradient-to-br from-[#D4AF37] to-[#C9A961] rounded-full opacity-20 blur-2xl"></div>
+            <div class="absolute -top-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gradient-to-br from-[#8B2635] to-[#6B1A27] rounded-full opacity-10 blur-3xl"></div>
+          </div>
         </div>
       </div>
       
-      <!-- Right Side - Quote & Details -->
-      <div class="flex-1 flex flex-col justify-center items-end py-[60px] pr-20 pl-10 text-right direction-rtl max-xl:py-10 max-xl:pr-10 max-xl:pl-5 max-md:py-8 max-md:pr-6 max-md:pl-4 max-[768px]:py-5 max-[768px]:pr-4 max-[768px]:pl-2.5 max-[500px]:py-4 max-[500px]:pr-3 max-[500px]:pl-2">
-        <!-- Big Quote in Urdu -->
-        <blockquote class="text-[clamp(26px,3.5vw,44px)] font-['Noto_Nastaliq_Urdu',serif] font-semibold leading-[2] my-0 mb-9 p-0 text-[#8B2635] not-italic max-w-[650px] max-md:text-[clamp(18px,3vw,28px)] max-md:leading-[1.8] max-md:mb-5 max-[768px]:text-[clamp(15px,3.2vw,24px)] max-[768px]:mb-4.5 max-[500px]:text-[clamp(13px,3vw,20px)] max-[500px]:leading-[1.75] max-[500px]:mb-3.5 animate-fadeInUp">
-          اس کائنات کی ہر شے اپنے تخلیق کار کی فرمانبردار ہے
-          <br />
-          <br />
-          سوائے اشرف المخلوقات کہلانے والے انسان کے
-          <br />
-          وہی ناشکرا اور نافرمان ہے
+      <!-- Right Side - Quote & Author Info -->
+      <div class="flex-1 w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-right direction-rtl order-1 lg:order-2 px-2 sm:px-4 md:px-6 lg:px-0">
+        
+        <!-- Author Quote -->
+        <blockquote class="w-full max-w-2xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 animate-fadeInUp">
+          <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[3.5rem] font-['Aref_Ruqaa_Ink',serif] font-semibold leading-[1.8] md:leading-[2] text-[#8B2635] mb-4 sm:mb-5 md:mb-6 break-words">
+            اس کائنات کی ہر شے اپنے تخلیق کار کی فرمانبردار ہے
+          </div>
+          <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[3.5rem] font-['Aref_Ruqaa_Ink',serif] font-semibold leading-[1.8] md:leading-[2] text-[#8B2635] break-words">
+            سوائے اشرف المخلوقات کہلانے والے انسان کے؛
+            <br class="hidden sm:block" />
+            وہی ناشکرا اور نافرمان ہے
+          </div>
         </blockquote>
         
-        <!-- Author Signature/Name -->
-        <div class="mb-5 max-w-[650px] w-full max-[768px]:mb-3 max-[500px]:mb-2.5 animate-fadeInUp" style="animation-delay: 0.3s">
-          <span class="block w-[100px] h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#C9A961] mb-5 ml-0 max-md:w-[60px] max-md:h-0.5 max-md:mb-3 max-[500px]:w-10 max-[500px]:mb-2"></span>
-          <p class="text-[clamp(28px,4vw,48px)] font-['Noto_Nastaliq_Urdu',serif] font-bold text-[#8B2635] my-0 leading-[1.4] max-md:text-[clamp(22px,4vw,36px)] max-[768px]:text-[clamp(20px,4vw,30px)] max-[500px]:text-[clamp(18px,4vw,26px)]">عبدالباری ایم کے</p>
-        </div>
+        <!-- Decorative Line -->
+        <div class="w-20 sm:w-24 md:w-28 h-1 bg-gradient-to-r from-[#D4AF37] to-[#C9A961] mb-4 sm:mb-5 md:mb-6 lg:mb-8 rounded-full"></div>
         
-        <!-- English Name & Tagline -->
-        <div class="mb-8 max-w-[650px] w-full max-md:mb-5 max-[768px]:mb-5 max-[500px]:mb-3 animate-fadeInUp" style="animation-delay: 0.5s">
-          <p class="text-[clamp(16px,2vw,22px)] font-['Cinzel',serif] font-semibold text-[#8B2635] my-0 mb-1.5 tracking-[2px] opacity-85 max-md:text-[clamp(14px,2vw,18px)] max-[768px]:text-[clamp(12px,2vw,16px)] max-[768px]:tracking-[1px] max-[500px]:text-[clamp(10px,2vw,14px)] max-[500px]:mb-0.75">Abdul Bari M K</p>
-          <p class="text-[clamp(13px,1.5vw,17px)] text-[#8B2635] my-0 tracking-[4px] opacity-65 max-md:text-[clamp(11px,1.5vw,14px)] max-md:tracking-[2px] max-[500px]:text-[clamp(9px,1.5vw,11px)]">ادیب ・ مترجم ・ شاعر</p>
-        </div>
-        
-        <!-- CTA Buttons -->
-        <div class="flex gap-4 flex-wrap max-w-[650px] w-full max-md:gap-2 max-[768px]:gap-2 max-[500px]:gap-1.5 animate-fadeInUp" style="animation-delay: 0.7s">
-          <a href="/books" class="inline-flex items-center gap-2.5 py-3.5 px-8 text-[15px] font-semibold rounded-[50px] no-underline transition-all duration-350 bg-gradient-to-br from-[#D4AF37] to-[#E5C158] text-[#2C1810] shadow-[0_6px_20px_rgba(212,175,55,0.35)] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(212,175,55,0.5)] max-md:py-2.5 max-md:px-5 max-md:text-[13px] max-md:gap-1.5 max-[768px]:py-2 max-[768px]:px-4 max-[768px]:text-xs max-[768px]:gap-1.5 max-[500px]:py-1.75 max-[500px]:px-3.5 max-[500px]:text-[11px] max-[500px]:gap-1">
-            <Icon name="book-open" size={18} />
-            میری تخلیقات
-          </a>
-          <a href="/about" class="inline-flex items-center gap-2.5 py-3.5 px-8 text-[15px] font-semibold rounded-[50px] no-underline transition-all duration-350 bg-transparent border-2 border-[#8B2635] text-[#8B2635] hover:bg-[#8B2635] hover:text-[#F5F5F0] hover:-translate-y-1 max-md:py-2.5 max-md:px-5 max-md:text-[13px] max-md:gap-1.5 max-[768px]:py-2 max-[768px]:px-4 max-[768px]:text-xs max-[768px]:gap-1.5 max-[500px]:py-1.75 max-[500px]:px-3.5 max-[500px]:text-[11px] max-[500px]:gap-1">
-            <Icon name="user" size={18} />
-            تعارف
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 opacity-80 animate-bounce-slow max-[768px]:bottom-2.5" aria-label="Scroll down">
-      <Icon name="chevron-down" size={24} color="var(--accent-color)" />
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="bg-[#1a0a0f] py-12" aria-label="Achievements">
-    <div class="max-w-[1400px] mx-auto px-10 relative z-[2] md:px-5">
-      <div class="grid grid-cols-4 gap-8 max-[900px]:grid-cols-2 max-[600px]:grid-cols-2 max-[600px]:gap-5">
-        <div class="text-center text-[#F5F5F0] animate-on-scroll">
-          <Icon name="book-open" size={32} color="var(--accent-color)" />
-          <span class="block text-[clamp(32px,5vw,48px)] font-bold font-['Cinzel',serif] text-[#D4AF37] my-2.5 mb-1">3+</span>
-          <span class="text-base opacity-85">شائع شدہ کتابیں</span>
-        </div>
-        <div class="text-center text-[#F5F5F0] animate-on-scroll">
-          <Icon name="languages" size={32} color="var(--accent-color)" />
-          <span class="block text-[clamp(32px,5vw,48px)] font-bold font-['Cinzel',serif] text-[#D4AF37] my-2.5 mb-1">50+</span>
-          <span class="text-base opacity-85">تراجم</span>
-        </div>
-        <div class="text-center text-[#F5F5F0] animate-on-scroll">
-          <Icon name="award" size={32} color="var(--accent-color)" />
-          <span class="block text-[clamp(32px,5vw,48px)] font-bold font-['Cinzel',serif] text-[#D4AF37] my-2.5 mb-1">5+</span>
-          <span class="text-base opacity-85">ایوارڈز</span>
-        </div>
-        <div class="text-center text-[#F5F5F0] animate-on-scroll">
-          <Icon name="users" size={32} color="var(--accent-color)" />
-          <span class="block text-[clamp(32px,5vw,48px)] font-bold font-['Cinzel',serif] text-[#D4AF37] my-2.5 mb-1">1K+</span>
-          <span class="text-base opacity-85">قارئین</span>
+        <!-- Author Name -->
+        <div class="mb-4 sm:mb-6 md:mb-8 lg:mb-10 animate-fadeInUp w-full" style="animation-delay: 0.2s">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-['Noto_Nastaliq_Urdu',serif] font-bold text-[#8B2635] mb-2 sm:mb-3 leading-tight break-words">
+            عبدالباری ایم کے
+          </h1>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-['Cinzel',serif] font-semibold text-[#8B2635] opacity-85 tracking-wider mb-1 sm:mb-2">
+            Abdul Bari M K
+          </p>
+          <p class="text-xs sm:text-sm md:text-base lg:text-lg text-[#8B2635] opacity-70 tracking-widest">
+            ادیب ・ مترجم ・ شاعر
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quick Intro Section -->
-  <section class="bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8] py-20" aria-label="Services Overview">
-    <div class="max-w-[1400px] mx-auto px-10 relative z-[2] md:px-5">
-      <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8">
-        <article class="bg-white p-9 rounded-[20px] text-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] border-2 border-[#C9A961] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(139,38,53,0.15)] animate-on-scroll">
-          <Icon name="book-open" size={40} color="var(--primary-color)" />
-          <h2 class="text-[26px] my-5 mb-3 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif]">کتابیں</h2>
-          <p class="text-[15px] opacity-80 mb-4.5">شائع شدہ تصانیف اور ادبی شاہکار</p>
-          <a href="/books" class="inline-flex items-center gap-1.5 text-[#D4AF37] no-underline font-semibold transition-all duration-300 hover:gap-2.5" aria-label="View all books">
-            مزید دیکھیں
-            <Icon name="arrow-right" size={16} />
-          </a>
-        </article>
+  <!-- Author Images Gallery Section -->
+  <section class="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8]" aria-label="Photo Gallery">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll mb-3 sm:mb-4 md:mb-5">زندگی کے اہم لمحات</h2>
+      <p class="section-subtitle animate-on-scroll mb-8 sm:mb-10 md:mb-12 lg:mb-16">Life Moments</p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full">
+        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll hover:-translate-y-2 w-full">
+          <div class="aspect-[4/3] overflow-hidden w-full">
+            <img 
+              src="/images/conference.png" 
+              alt="Literary Conference" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <p class="text-base sm:text-lg md:text-xl font-semibold">ادبی کانفرنس</p>
+            <p class="text-xs sm:text-sm md:text-base opacity-90">Literary Conference</p>
+          </div>
+        </div>
         
-        <article class="bg-white p-9 rounded-[20px] text-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] border-2 border-[#C9A961] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(139,38,53,0.15)] animate-on-scroll">
-          <Icon name="languages" size={40} color="var(--primary-color)" />
-          <h2 class="text-[26px] my-5 mb-3 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif]">ترجمہ</h2>
-          <p class="text-[15px] opacity-80 mb-4.5">اردو اور انگریزی کے درمیان پُل</p>
-          <a href="/translation" class="inline-flex items-center gap-1.5 text-[#D4AF37] no-underline font-semibold transition-all duration-300 hover:gap-2.5" aria-label="View translation services">
-            مزید دیکھیں
-            <Icon name="arrow-right" size={16} />
-          </a>
-        </article>
+        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll hover:-translate-y-2 w-full">
+          <div class="aspect-[4/3] overflow-hidden w-full">
+            <img 
+              src="/images/award.png" 
+              alt="Award Ceremony" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <p class="text-base sm:text-lg md:text-xl font-semibold">ایوارڈ تقریب</p>
+            <p class="text-xs sm:text-sm md:text-base opacity-90">Award Ceremony</p>
+          </div>
+        </div>
         
-        <article class="bg-white p-9 rounded-[20px] text-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] border-2 border-[#C9A961] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(139,38,53,0.15)] animate-on-scroll">
-          <Icon name="award" size={40} color="var(--primary-color)" />
-          <h2 class="text-[26px] my-5 mb-3 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif]">سفر</h2>
-          <p class="text-[15px] opacity-80 mb-4.5">زندگی کے اہم لمحات اور کامیابیاں</p>
-          <a href="/life-journey" class="inline-flex items-center gap-1.5 text-[#D4AF37] no-underline font-semibold transition-all duration-300 hover:gap-2.5" aria-label="View life journey">
-            مزید دیکھیں
-            <Icon name="arrow-right" size={16} />
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Quote -->
-  <section class="bg-gradient-to-br from-[#8B2635] to-[#6B1A27] py-20" aria-label="Featured Quote">
-    <div class="max-w-[1400px] mx-auto px-10 relative z-[2] md:px-5">
-      <figure class="text-center max-w-[800px] mx-auto text-[#F5F5F0] animate-on-scroll">
-        <Icon name="quote" size={60} color="var(--accent-color)" class="block mx-auto mb-5 opacity-80" />
-        <blockquote class="text-[clamp(22px,4vw,32px)] leading-[1.8] mb-6 italic">
-          الفاظ میں وہ طاقت ہے جو پہاڑوں کو ہلا دے، دلوں کو بدل دے، اور نسلوں کو جوڑ دے۔
-        </blockquote>
-        <figcaption class="text-lg text-[#D4AF37]">— عبدالباری ایم کے</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Quick Links -->
-  <section class="bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8] py-[60px]" aria-label="Quick Navigation">
-    <div class="max-w-[1400px] mx-auto px-10 relative z-[2] md:px-5">
-      <div class="grid grid-cols-4 gap-5 max-[900px]:grid-cols-2 max-[600px]:grid-cols-2 max-[600px]:gap-4">
-        <a href="/books" class="bg-white p-8 rounded-2xl text-center no-underline shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(139,38,53,0.12)] animate-on-scroll max-[600px]:p-5">
-          <Icon name="book-open" size={36} color="var(--primary-color)" />
-          <h3 class="text-[22px] text-[#8B2635] my-4 mb-1 font-['Noto_Nastaliq_Urdu',serif]">کتب</h3>
-          <span class="text-xs text-[#2C1810] opacity-60 font-['Cinzel',serif]">Books</span>
-        </a>
-        <a href="/life-journey" class="bg-white p-8 rounded-2xl text-center no-underline shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(139,38,53,0.12)] animate-on-scroll max-[600px]:p-5">
-          <Icon name="clock" size={36} color="var(--primary-color)" />
-          <h3 class="text-[22px] text-[#8B2635] my-4 mb-1 font-['Noto_Nastaliq_Urdu',serif]">زندگی</h3>
-          <span class="text-xs text-[#2C1810] opacity-60 font-['Cinzel',serif]">Life Journey</span>
-        </a>
-        <a href="/upcoming" class="bg-white p-8 rounded-2xl text-center no-underline shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(139,38,53,0.12)] animate-on-scroll max-[600px]:p-5">
-          <Icon name="calendar" size={36} color="var(--primary-color)" />
-          <h3 class="text-[22px] text-[#8B2635] my-4 mb-1 font-['Noto_Nastaliq_Urdu',serif]">آئندہ</h3>
-          <span class="text-xs text-[#2C1810] opacity-60 font-['Cinzel',serif]">Upcoming</span>
-        </a>
-        <a href="/contact" class="bg-white p-8 rounded-2xl text-center no-underline shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(139,38,53,0.12)] animate-on-scroll max-[600px]:p-5">
-          <Icon name="mail" size={36} color="var(--primary-color)" />
-          <h3 class="text-[22px] text-[#8B2635] my-4 mb-1 font-['Noto_Nastaliq_Urdu',serif]">رابطہ</h3>
-          <span class="text-xs text-[#2C1810] opacity-60 font-['Cinzel',serif]">Contact</span>
-        </a>
+        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll hover:-translate-y-2 sm:col-span-2 lg:col-span-1 w-full">
+          <div class="aspect-[4/3] overflow-hidden w-full">
+            <img 
+              src="/images/book-launch.png" 
+              alt="Book Launch" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <p class="text-base sm:text-lg md:text-xl font-semibold">کتاب کی رونمائی</p>
+            <p class="text-xs sm:text-sm md:text-base opacity-90">Book Launch</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  @keyframes bounce-slow {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-8px);
-    }
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 2.5s ease-in-out infinite;
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .animate-bounce-slow {
+    .animate-fadeInUp,
+    .animate-fadeIn,
+    .animate-on-scroll {
       animation: none;
+      opacity: 1;
+      transform: none;
     }
   }
 </style>
