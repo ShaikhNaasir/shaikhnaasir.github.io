@@ -1,0 +1,69 @@
+---
+// Header Component with Navigation
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'گھر', labelEn: 'Home' },
+  { href: '/about', label: 'تعارف', labelEn: 'About' },
+  { href: '/books', label: 'کتب', labelEn: 'Books' },
+  { href: '/life-journey', label: 'زندگی', labelEn: 'Life' },
+  { href: '/upcoming', label: 'آئندہ', labelEn: 'Upcoming' },
+  { href: '/translation', label: 'ترجمہ', labelEn: 'Translation' },
+  { href: '/contact', label: 'رابطہ', labelEn: 'Contact' },
+];
+---
+
+<nav class="fixed top-0 w-full bg-gradient-to-br from-[#8B2635] to-[#6B1A27] py-5 shadow-[0_4px_20px_rgba(139,38,53,0.3)] z-[1000] backdrop-blur-sm">
+  <div class="max-w-[1400px] mx-auto px-10 relative z-[2] flex justify-between items-center md:px-5">
+    <a href="/" class="text-[28px] font-bold text-[#D4AF37] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] font-['Noto_Nastaliq_Urdu',serif] no-underline transition-all duration-300 hover:scale-105">
+      عبدالباری ایم کے
+    </a>
+    
+    <button class="hidden max-md:flex flex-col gap-1.5 bg-transparent border-0 cursor-pointer p-1.5" aria-label="Toggle menu" id="mobile-menu-btn">
+      <span class="block w-6 h-0.5 bg-[#D4AF37] rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-[#D4AF37] rounded-sm transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-[#D4AF37] rounded-sm transition-all duration-300"></span>
+    </button>
+    
+    <ul class="flex gap-9 list-none m-0 p-0 max-md:absolute max-md:top-full max-md:right-0 max-md:left-0 max-md:bg-gradient-to-br max-md:from-[#8B2635] max-md:to-[#6B1A27] max-md:flex-col max-md:p-5 max-md:gap-4 max-md:shadow-[0_10px_30px_rgba(0,0,0,0.3)] max-md:transition-all max-md:duration-400 max-md:translate-y-[-150%] max-md:opacity-0 max-md:nav-links-closed" id="nav-links">
+      {navLinks.map(link => (
+        <li>
+          <a 
+            href={link.href} 
+            class={`text-base font-semibold text-[#F5F5F0] no-underline transition-all duration-300 relative px-2.5 py-1.5 inline-block hover:text-[#D4AF37] ${pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? 'text-[#D4AF37] after:w-full' : 'after:w-0'} after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:bg-[#D4AF37] after:transition-all after:duration-300 after:-translate-x-1/2 hover:after:w-full max-md:text-lg max-md:p-2.5`}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
+  
+  menuBtn?.addEventListener('click', () => {
+    navLinks?.classList.toggle('nav-links-open');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks?.classList.remove('nav-links-open');
+    });
+  });
+</script>
+
+<style>
+  .nav-links-closed {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+
+  .nav-links-open {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="تعارف - About">
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-br from-[#8B2635] to-[#6B1A27] py-20 text-center -mt-[100px] pt-[180px]">
+    <div class="container">
+      <h1 class="text-[60px] text-[#F5F5F0] mb-4 font-['Noto_Nastaliq_Urdu',serif] font-bold animate-fadeInUp max-md:text-[42px]">تعارف</h1>
+      <p class="text-2xl text-[#D4AF37] font-['Cinzel',serif] animate-fadeInUp">About the Author</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8] py-[100px]">
+    <div class="container">
+      <div class="grid grid-cols-[1fr_1.5fr] gap-[60px] items-start max-[900px]:grid-cols-1">
+        <div class="relative animate-on-scroll max-[900px]:text-center">
+          <div class="w-full max-w-[350px] aspect-[4/5] bg-gradient-to-br from-[#8B2635] to-[#C9A961] rounded-[20px] p-4 shadow-[0_20px_60px_rgba(139,38,53,0.3)] relative overflow-hidden max-[900px]:mx-auto">
+            <div class="w-full h-full bg-[#FBF8F3] rounded-[15px] flex items-center justify-center text-[80px] text-[#8B2635] font-bold">
+              ع ب
+            </div>
+          </div>
+          <div class="absolute -bottom-5 -right-5 opacity-40">
+            <Icon name="sparkles" size={50} color="var(--accent-color)" />
+          </div>
+        </div>
+        <div class="animate-on-scroll">
+          <h2 class="text-[42px] mb-2.5 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif] font-bold max-md:text-[32px]">ایک ادبی سفر</h2>
+          <h3 class="text-[22px] text-[#2C1810] opacity-70 font-['Cinzel',serif] mb-8">A Literary Journey</h3>
+          <p class="text-lg leading-[2] mb-5 text-justify font-['Noto_Nastaliq_Urdu',serif]">
+            عبدالباری ایم کے ایک منفرد ادیب اور مترجم ہیں جو اردو اور انگریزی
+            دونوں زبانوں میں اپنے خیالات کو بیان کرنے کا ہنر رکھتے ہیں۔ ان کی
+            تحریریں روایت اور جدیدیت کے امتزاج کی عکاس ہیں۔
+          </p>
+          <p class="text-lg leading-[2] mb-5 text-justify font-['Cormorant_Garamond',serif]">
+            Abdul Bari M K is a distinguished writer and translator who
+            seamlessly bridges the worlds of Urdu and English literature. With
+            a deep appreciation for classical Urdu poetry and contemporary
+            literary forms, his work reflects a harmonious blend of tradition
+            and modernity.
+          </p>
+          <p class="text-lg leading-[2] mb-5 text-justify font-['Noto_Nastaliq_Urdu',serif]">
+            ان کی تخلیقات نے قارئین کو نہ صرف تفریح فراہم کی بلکہ فکری غذا بھی
+            بخشی۔ ان کا ترجمہ کا کام دو ثقافتوں کے درمیان ایک مضبوط پل ہے۔
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Facts -->
+  <section class="py-[100px]">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">اہم معلومات</h2>
+      <p class="section-subtitle animate-on-scroll">Quick Facts</p>
+      
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8">
+        <div class="bg-white p-9 rounded-[20px] text-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] border-b-4 border-[#D4AF37] transition-all duration-400 hover:-translate-y-2 animate-on-scroll">
+          <span class="flex justify-center mb-4">
+            <Icon name="map-pin" size={42} color="var(--primary-color)" />
+          </span>
+          <h3 class="text-2xl mb-2.5 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif] font-bold">مقام</h3>
+          <p class="text-base my-1">نو پنویل، ممبئی</p>
+          <p class="text-base my-1 opacity-70 font-['Cinzel',serif]">New Panvel, Mumbai</p>
+        </div>
+        <div class="bg-white p-9 rounded-[20px] text-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] border-b-4 border-[#D4AF37] transition-all duration-400 hover:-translate-y-2 animate-on-scroll">
+          <span class="flex justify-center mb-4">
+            <Icon name="book-open" size={42} color="var(--primary-color)" />
+          </span>
+          <h3 class="text-2xl mb-2.5 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif] font-bold">کتابیں</h3>
+          <p class="text-base my-1">3+ شائع شدہ</p>
+          <p class="text-base my-1 opacity-70 font-['Cinzel',serif]">3+ Published</p>
+        </div>
+        <div class="bg-white p-9 rounded-[20px] text-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] border-b-4 border-[#D4AF37] transition-all duration-400 hover:-translate-y-2 animate-on-scroll">
+          <span class="flex justify-center mb-4">
+            <Icon name="globe" size={42} color="var(--primary-color)" />
+          </span>
+          <h3 class="text-2xl mb-2.5 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif] font-bold">زبانیں</h3>
+          <p class="text-base my-1">اردو، انگریزی</p>
+          <p class="text-base my-1 opacity-70 font-['Cinzel',serif]">Urdu, English</p>
+        </div>
+        <div class="bg-white p-9 rounded-[20px] text-center shadow-[0_10px_40px_rgba(0,0,0,0.1)] border-b-4 border-[#D4AF37] transition-all duration-400 hover:-translate-y-2 animate-on-scroll">
+          <span class="flex justify-center mb-4">
+            <Icon name="feather" size={42} color="var(--primary-color)" />
+          </span>
+          <h3 class="text-2xl mb-2.5 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif] font-bold">مہارت</h3>
+          <p class="text-base my-1">تحریر، ترجمہ</p>
+          <p class="text-base my-1 opacity-70 font-['Cinzel',serif]">Writing, Translation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8] py-[100px]">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">تصویری جھلکیاں</h2>
+      <p class="section-subtitle animate-on-scroll">Photo Gallery</p>
+      
+      <div class="photo-gallery">
+        <div class="gallery-item animate-on-scroll">
+          <img src="/images/conference.png" alt="Literary Conference" />
+          <div class="caption">ادبی کانفرنس میں</div>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/images/award.png" alt="Award Ceremony" />
+          <div class="caption">ایوارڈ تقریب</div>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/images/book-launch.png" alt="Book Launch" />
+          <div class="caption">کتاب کی رونمائی</div>
+        </div>
+      </div>
+      
+      <p class="text-center mt-10 text-lg animate-on-scroll">
+        مزید تصاویر کے لیے <a href="/life-journey" class="text-[#8B2635] no-underline font-bold">زندگی کا سفر</a> دیکھیں
+      </p>
+    </div>
+  </section>
+</BaseLayout>
