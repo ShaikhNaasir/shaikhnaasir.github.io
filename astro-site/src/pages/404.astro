@@ -1,0 +1,391 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout title="صفحہ نہیں ملا - 404">
+    <!-- 404 Hero -->
+    <section class="page-404">
+        <div class="container">
+            <div class="error-container">
+                <div class="error-code animate-fadeInUp">404</div>
+                <h1 class="error-title animate-fadeInUp">صفحہ نہیں ملا</h1>
+                <p class="error-subtitle animate-fadeInUp">Page Not Found</p>
+
+                <p class="error-message animate-fadeInUp">
+                    افسوس، آپ کی تلاش میں صفحہ نہیں ملا۔ شاید یہ صفحہ منتقل ہو
+                    گیا ہے یا حذف کر دیا گیا ہے۔
+                </p>
+                <p class="error-message-en animate-fadeInUp">
+                    Sorry, the page you're looking for couldn't be found. It may
+                    have been moved or deleted.
+                </p>
+
+                <div class="error-buttons animate-fadeInUp">
+                    <a href="/" class="btn btn-primary">
+                        <Icon name="home" size={20} />
+                        ہوم پیج پر جائیں
+                    </a>
+                    <a href="/contact" class="btn btn-secondary">
+                        <Icon name="mail" size={20} />
+                        رابطہ کریں
+                    </a>
+                </div>
+            </div>
+
+            <!-- Suggested Pages -->
+            <div class="suggestions animate-on-scroll">
+                <h2>دیگر صفحات دیکھیں</h2>
+                <p class="suggestions-subtitle">Browse Other Pages</p>
+
+                <div class="suggestions-grid">
+                    <a href="/" class="suggestion-item">
+                        <span class="suggestion-icon">
+                            <Icon
+                                name="book-open"
+                                size={32}
+                                color="var(--primary-color)"
+                            />
+                        </span>
+                        <h3>ہوم</h3>
+                        <p>گھر کی صفحہ</p>
+                    </a>
+
+                    <a href="/books" class="suggestion-item">
+                        <span class="suggestion-icon">
+                            <Icon
+                                name="book"
+                                size={32}
+                                color="var(--primary-color)"
+                            />
+                        </span>
+                        <h3>کتب</h3>
+                        <p>شائع شدہ تصانیف</p>
+                    </a>
+
+                    <a href="/translation" class="suggestion-item">
+                        <span class="suggestion-icon">
+                            <Icon
+                                name="languages"
+                                size={32}
+                                color="var(--primary-color)"
+                            />
+                        </span>
+                        <h3>ترجمہ</h3>
+                        <p>ترجمہ کے کام</p>
+                    </a>
+
+                    <a href="/life-journey" class="suggestion-item">
+                        <span class="suggestion-icon">
+                            <Icon
+                                name="map-pin"
+                                size={32}
+                                color="var(--primary-color)"
+                            />
+                        </span>
+                        <h3>زندگی کا سفر</h3>
+                        <p>میرے بارے میں</p>
+                    </a>
+
+                    <a href="/about" class="suggestion-item">
+                        <span class="suggestion-icon">
+                            <Icon
+                                name="user"
+                                size={32}
+                                color="var(--primary-color)"
+                            />
+                        </span>
+                        <h3>تعارف</h3>
+                        <p>مزید معلومات</p>
+                    </a>
+
+                    <a href="/contact" class="suggestion-item">
+                        <span class="suggestion-icon">
+                            <Icon
+                                name="mail"
+                                size={32}
+                                color="var(--primary-color)"
+                            />
+                        </span>
+                        <h3>رابطہ</h3>
+                        <p>ہم سے جڑیں</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .page-404 {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        background: linear-gradient(
+            135deg,
+            var(--primary-color) 0%,
+            var(--primary-dark) 100%
+        );
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .error-container {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .error-code {
+        font-size: 120px;
+        font-weight: 900;
+        background: linear-gradient(135deg, var(--accent-color), #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+
+    .error-title {
+        font-size: 48px;
+        color: var(--text-light);
+        margin-bottom: 10px;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+    }
+
+    .error-subtitle {
+        font-size: 24px;
+        color: var(--accent-color);
+        font-family: "Cinzel", serif;
+        margin-bottom: 30px;
+    }
+
+    .error-message {
+        font-size: 18px;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        opacity: 0.95;
+        line-height: 1.8;
+    }
+
+    .error-message-en {
+        font-size: 16px;
+        color: var(--text-light);
+        opacity: 0.85;
+        margin-bottom: 40px;
+        font-family: "Cinzel", serif;
+    }
+
+    .error-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        background: var(--accent-color);
+        color: var(--primary-color);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-secondary {
+        background: var(--text-light);
+        color: var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(245, 245, 240, 0.3);
+    }
+
+    /* Suggestions */
+    .suggestions {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 60px 40px;
+        border-radius: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .suggestions h2 {
+        font-size: 40px;
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+    }
+
+    .suggestions-subtitle {
+        font-size: 20px;
+        text-align: center;
+        color: var(--text-dark);
+        opacity: 0.7;
+        font-family: "Cinzel", serif;
+        margin-bottom: 50px;
+    }
+
+    .suggestions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .suggestion-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 20px;
+        background: white;
+        border-radius: 20px;
+        border: 2px solid var(--secondary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .suggestion-item:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary-color);
+        box-shadow: 0 15px 40px rgba(139, 38, 53, 0.15);
+    }
+
+    .suggestion-icon {
+        margin-bottom: 15px;
+    }
+
+    .suggestion-item h3 {
+        font-size: 16px;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .suggestion-item p {
+        font-size: 13px;
+        color: var(--text-dark);
+        opacity: 0.7;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .error-code {
+            font-size: 80px;
+        }
+
+        .error-title {
+            font-size: 36px;
+        }
+
+        .error-subtitle {
+            font-size: 18px;
+        }
+
+        .error-message {
+            font-size: 16px;
+        }
+
+        .error-buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .suggestions {
+            padding: 40px 25px;
+        }
+
+        .suggestions h2 {
+            font-size: 32px;
+        }
+
+        .suggestions-grid {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .suggestion-item {
+            padding: 20px 15px;
+        }
+
+        .suggestion-item h3 {
+            font-size: 14px;
+        }
+
+        .suggestion-item p {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .error-code {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .error-title {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .error-subtitle {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .error-message-en {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .suggestions {
+            margin-top: 20px;
+            padding: 30px 15px;
+        }
+
+        .suggestions h2 {
+            font-size: 26px;
+        }
+
+        .suggestions-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .suggestion-item {
+            padding: 15px 10px;
+        }
+    }
+</style>
