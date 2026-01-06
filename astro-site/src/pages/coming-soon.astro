@@ -1,0 +1,642 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout title="جلد آنے والا - Coming Soon">
+    <!-- Coming Soon Hero -->
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="coming-soon-container">
+                <div class="coming-soon-content animate-fadeInUp">
+                    <div class="coming-soon-icon">
+                        <Icon
+                            name="clock"
+                            size={80}
+                            color="var(--accent-color)"
+                        />
+                    </div>
+
+                    <h1 class="coming-soon-title">جلد آ رہا ہے</h1>
+                    <p class="coming-soon-subtitle">Coming Soon</p>
+
+                    <p class="coming-soon-message">
+                        یہ صفحہ ابھی تیار ہو رہا ہے۔ براہ کرم تھوڑا انتظار کریں۔
+                        ہم اسے جلد ہی مکمل کر دیں گے۔
+                    </p>
+                    <p class="coming-soon-message-en">
+                        This page is currently under development. Please wait
+                        while we prepare something amazing for you.
+                    </p>
+
+                    <div class="newsletter-section">
+                        <p class="newsletter-text">نئی خبریں حاصل کریں</p>
+                        <form class="newsletter-form" id="comingSoonForm">
+                            <input
+                                type="email"
+                                placeholder="اپنی ای میل درج کریں"
+                                class="newsletter-input"
+                                required
+                            />
+                            <button type="submit" class="newsletter-btn">
+                                <Icon name="send" size={18} />
+                                بھیجیں
+                            </button>
+                        </form>
+                        <p class="newsletter-notice">
+                            جب یہ صفحہ مکمل ہو جائے تو ہم آپ کو آگاہ کریں گے۔
+                        </p>
+                    </div>
+
+                    <a href="/" class="back-home-btn">
+                        <Icon name="arrow-right" size={20} />
+                        ہوم پیج پر واپس جائیں
+                    </a>
+                </div>
+
+                <!-- Illustration -->
+                <div class="coming-soon-illustration animate-on-scroll">
+                    <svg
+                        viewBox="0 0 200 200"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="grad1"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="100%"
+                            >
+                                <stop
+                                    offset="0%"
+                                    style="stop-color:#8B2635;stop-opacity:1"
+                                ></stop>
+                                <stop
+                                    offset="100%"
+                                    style="stop-color:#D4AF37;stop-opacity:1"
+                                ></stop>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Clock -->
+                        <circle
+                            cx="100"
+                            cy="100"
+                            r="80"
+                            fill="url(#grad1)"
+                            opacity="0.1"></circle>
+                        <circle
+                            cx="100"
+                            cy="100"
+                            r="75"
+                            fill="none"
+                            stroke="#8B2635"
+                            stroke-width="3"></circle>
+
+                        <!-- Clock face -->
+                        <circle
+                            cx="100"
+                            cy="100"
+                            r="60"
+                            fill="white"
+                            stroke="#8B2635"
+                            stroke-width="2"></circle>
+
+                        <!-- Hour markers -->
+                        <line
+                            x1="100"
+                            y1="45"
+                            x2="100"
+                            y2="50"
+                            stroke="#8B2635"
+                            stroke-width="2"></line>
+                        <line
+                            x1="155"
+                            y1="100"
+                            x2="150"
+                            y2="100"
+                            stroke="#8B2635"
+                            stroke-width="2"></line>
+                        <line
+                            x1="100"
+                            y1="155"
+                            x2="100"
+                            y2="150"
+                            stroke="#8B2635"
+                            stroke-width="2"></line>
+                        <line
+                            x1="45"
+                            y1="100"
+                            x2="50"
+                            y2="100"
+                            stroke="#8B2635"
+                            stroke-width="2"></line>
+
+                        <!-- Clock hands (animated) -->
+                        <line
+                            x1="100"
+                            y1="100"
+                            x2="100"
+                            y2="65"
+                            stroke="#8B2635"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            class="hour-hand"></line>
+                        <line
+                            x1="100"
+                            y1="100"
+                            x2="100"
+                            y2="55"
+                            stroke="#D4AF37"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            class="minute-hand"></line>
+                        <circle cx="100" cy="100" r="5" fill="#8B2635"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Coming -->
+    <section class="whats-coming-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">کیا آ رہا ہے</h2>
+            <p class="section-subtitle animate-on-scroll">What to Expect</p>
+
+            <div class="features-grid animate-on-scroll">
+                <div class="feature-card">
+                    <Icon name="star" size={40} color="var(--primary-color)" />
+                    <h3>نیا مواد</h3>
+                    <p>منتخب اور دلچسپ مواد</p>
+                </div>
+
+                <div class="feature-card">
+                    <Icon
+                        name="layout"
+                        size={40}
+                        color="var(--primary-color)"
+                    />
+                    <h3>بہتر ڈیزائن</h3>
+                    <p>جدید اور صارف دوست انٹرفیس</p>
+                </div>
+
+                <div class="feature-card">
+                    <Icon name="zap" size={40} color="var(--primary-color)" />
+                    <h3>تیز رفتار</h3>
+                    <p>بہتر کارکردگی اور رفتار</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<script>
+    // Animate clock hands
+    function rotateClock() {
+        const hourHand = document.querySelector(".hour-hand");
+        const minuteHand = document.querySelector(".minute-hand");
+
+        if (hourHand && minuteHand) {
+            const now = new Date();
+            const hours = now.getHours() % 12;
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            const hourDegrees = hours * 30 + minutes * 0.5;
+            const minuteDegrees = minutes * 6 + seconds * 0.1;
+
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+            minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+        }
+    }
+
+    rotateClock();
+    setInterval(rotateClock, 1000);
+
+    // Newsletter form
+    document
+        .getElementById("comingSoonForm")
+        ?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = e.target.querySelector('input[type="email"]').value;
+            const btn = e.target.querySelector("button");
+            const originalHTML = btn.innerHTML;
+
+            try {
+                btn.disabled = true;
+                btn.innerHTML = "⏳ بھیجا جا رہا ہے...";
+
+                // Simulate API call (you can connect to your email service)
+                await new Promise((resolve) => setTimeout(resolve, 1000));
+
+                alert(`✅ شکریہ! آپ کی ای میل (${email}) محفوظ کر دی گئی ہے۔`);
+                e.target.reset();
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+            } catch (error) {
+                alert("❌ خرابی ہوئی۔ براہ کرم دوبارہ کوشش کریں۔");
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+            }
+        });
+</script>
+
+<style>
+    .coming-soon-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        background: linear-gradient(
+            135deg,
+            var(--primary-color) 0%,
+            var(--primary-dark) 100%
+        );
+        position: relative;
+        overflow: hidden;
+    }
+
+    .coming-soon-section::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: rgba(212, 175, 55, 0.1);
+        border-radius: 50%;
+        top: -100px;
+        right: -100px;
+    }
+
+    .coming-soon-section::after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(212, 175, 55, 0.08);
+        border-radius: 50%;
+        bottom: -50px;
+        left: -50px;
+    }
+
+    .coming-soon-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        max-width: 1200px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .coming-soon-content {
+        text-align: right;
+    }
+
+    .coming-soon-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        background: rgba(212, 175, 55, 0.2);
+        border-radius: 50%;
+        margin-bottom: 30px;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .coming-soon-title {
+        font-size: 56px;
+        color: var(--text-light);
+        margin-bottom: 10px;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+    }
+
+    .coming-soon-subtitle {
+        font-size: 28px;
+        color: var(--accent-color);
+        font-family: "Cinzel", serif;
+        margin-bottom: 30px;
+    }
+
+    .coming-soon-message {
+        font-size: 18px;
+        color: var(--text-light);
+        line-height: 1.9;
+        margin-bottom: 15px;
+        opacity: 0.95;
+    }
+
+    .coming-soon-message-en {
+        font-size: 16px;
+        color: var(--text-light);
+        opacity: 0.85;
+        font-family: "Cinzel", serif;
+        margin-bottom: 40px;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+    }
+
+    .newsletter-text {
+        font-size: 16px;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .newsletter-form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-input {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 50px;
+        font-size: 14px;
+        font-family: inherit;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .newsletter-input:focus {
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+    }
+
+    .newsletter-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 30px;
+        background: var(--accent-color);
+        color: var(--primary-color);
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .newsletter-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .newsletter-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    .newsletter-notice {
+        font-size: 13px;
+        color: var(--text-light);
+        opacity: 0.8;
+    }
+
+    .back-home-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 40px;
+        background: transparent;
+        color: var(--text-light);
+        border: 2px solid var(--text-light);
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .back-home-btn:hover {
+        background: var(--text-light);
+        color: var(--primary-color);
+        transform: translateX(10px);
+    }
+
+    /* Illustration */
+    .coming-soon-illustration {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .coming-soon-illustration svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+    }
+
+    /* What's Coming Section */
+    .whats-coming-section {
+        padding: 100px 0;
+        background: linear-gradient(to bottom, var(--bg-cream), white);
+    }
+
+    .section-title {
+        font-size: 40px;
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+    }
+
+    .section-subtitle {
+        font-size: 20px;
+        text-align: center;
+        color: var(--text-dark);
+        opacity: 0.7;
+        font-family: "Cinzel", serif;
+        margin-bottom: 50px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 20px;
+        border: 2px solid var(--secondary-color);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(139, 38, 53, 0.1);
+        border-color: var(--primary-color);
+    }
+
+    .feature-card h3 {
+        font-size: 22px;
+        color: var(--primary-color);
+        margin: 20px 0 10px 0;
+        font-family: "Noto Nastaliq Urdu", serif;
+    }
+
+    .feature-card p {
+        font-size: 15px;
+        color: var(--text-dark);
+        opacity: 0.8;
+    }
+
+    @media (max-width: 1024px) {
+        .coming-soon-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            text-align: center;
+        }
+
+        .coming-soon-content {
+            text-align: center;
+        }
+
+        .coming-soon-icon {
+            margin: 0 auto 30px auto;
+        }
+
+        .newsletter-form {
+            flex-direction: column;
+        }
+
+        .newsletter-input,
+        .newsletter-btn {
+            width: 100%;
+        }
+
+        .back-home-btn {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .coming-soon-section {
+            padding: 40px 20px;
+        }
+
+        .coming-soon-title {
+            font-size: 42px;
+        }
+
+        .coming-soon-subtitle {
+            font-size: 22px;
+        }
+
+        .coming-soon-message {
+            font-size: 16px;
+        }
+
+        .coming-soon-illustration {
+            width: 200px;
+            height: 200px;
+        }
+
+        .section-title {
+            font-size: 32px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+        }
+
+        .feature-card {
+            padding: 30px 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .coming-soon-title {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .coming-soon-subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon-message {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .coming-soon-message-en {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .coming-soon-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-section {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-text {
+            font-size: 14px;
+        }
+
+        .newsletter-input {
+            padding: 10px 15px;
+            font-size: 13px;
+        }
+
+        .newsletter-btn {
+            padding: 10px 20px;
+        }
+
+        .coming-soon-illustration {
+            width: 150px;
+            height: 150px;
+        }
+
+        .section-title {
+            font-size: 26px;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .feature-card {
+            padding: 25px 15px;
+        }
+    }
+</style>

@@ -1,75 +1,165 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Icon from '../components/Icon.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
 
 const books = [
   {
-    title: 'خواب و خیال کی دنیا',
-    titleEn: 'World of Dreams and Thoughts',
-    description: 'ایک شاعرانہ مجموعہ جو زندگی کے مختلف پہلوؤں کو خوبصورت انداز میں بیان کرتا ہے۔ یہ کتاب روایتی اور جدید غزلوں کا حسین امتزاج ہے۔',
-    year: '2022',
-    icon: 'book-open',
-    category: 'شاعری'
+    title: "بھیروں کبھی نہیں مرا",
+    titleEn: "Bhairon Kabhi Nahi Mara",
+    author: "ڈاکٹر گنگا رام راجی",
+    translator: "عبدالباری ایم۔ کے۔",
+    description:
+      "ایک گہرائی سے بھرا ناول جو انسانی رشتوں اور روحانی سفر کو کھوجتا ہے۔ یہ تخلیق اپنی ثقافتی گہرائی اور فنی حسن کے لیے منفرد ہے۔",
+    year: "2016",
+    image: "/images/bhairon-kabhi-nahi-mara.jpg",
+    category: "ناول",
   },
   {
-    title: 'لفظوں کی بارش',
-    titleEn: 'Rain of Words',
-    description: 'ایک افسانوی مجموعہ جو معاشرتی مسائل اور انسانی جذبات کو حقیقت پسندی کے ساتھ پیش کرتا ہے۔ ہر افسانہ ایک نیا تجربہ اور نیا درس ہے۔',
-    year: '2023',
-    icon: 'scroll',
-    category: 'افسانے'
+    title: "باہمِ دِگری",
+    titleEn: "Baham-E-Digri",
+    translator: "عبدالباری ایم۔ کے۔",
+    description:
+      "ہندی ادب کا ایک نفیس ترجمہ جو انسانی تعلقات کے خوبصورت پہلوؤں کو اجاگر کرتا ہے۔ یہ کہانی دل کو چھونے والی اور فکر انگیز ہے۔",
+    year: "2019",
+    image: "/images/baham-e-digri.jpg",
+    category: "ہندی کہانی",
   },
   {
-    title: 'ترجمہ: کلاسیکی شاہکار',
-    titleEn: 'Translation: Classical Masterpieces',
-    description: 'مغربی ادب کے منتخب شاہکاروں کا اردو ترجمہ، جو زبان اور ثقافت کی باریکیوں کو برقرار رکھتے ہوئے اصل جذبات کو منتقل کرتا ہے۔',
-    year: '2024',
-    icon: 'languages',
-    category: 'ترجمہ'
-  }
+    title: "مقابلہ آرائی",
+    titleEn: "Muqabla Aarai",
+    compiler: "عبدالباری ایم۔ کے۔",
+    description:
+      "بیت بازی کا ایک منتخب مجموعہ جو روایتی شاعری کی خوبصورتی اور گہرائی کو ظاہر کرتا ہے۔ ہر بیت ایک الگ نکتہ نظر اور جذبات کا اظہار ہے۔",
+    year: "2022",
+    image: "/images/muqabla-arayi.jpg",
+    category: "بیت بازی",
+  },
+  {
+    title: "آتشِ دشت",
+    titleEn: "Aatish-E-Dasht",
+    author: "پون شرما",
+    translator: "عبدالباری ایم۔ کے۔",
+    description:
+      "ایک جدید اور متنوع تخلیق جو معاشرتی حقیقتوں کو نئے انداز میں پیش کرتی ہے۔ یہ ترجمہ اصل جذبات کو برقرار رکھتے ہوئے اردو کے حسن میں ڈھالا گیا ہے۔",
+    year: "2023",
+    image: "/images/aatish-e-dasht.jpg",
+    category: "ترجمہ",
+  },
 ];
 ---
 
 <BaseLayout title="کتب - Books">
   <!-- Hero Banner -->
-  <section class="bg-gradient-to-br from-[#8B2635] to-[#6B1A27] py-12 sm:py-16 md:py-20 text-center -mt-16 sm:-mt-20 md:-mt-[100px] pt-28 sm:pt-32 md:pt-[180px] px-4">
+  <section
+    class="bg-gradient-to-br from-[#8B2635] to-[#6B1A27] py-12 sm:py-16 md:py-20 text-center -mt-16 sm:-mt-20 md:-mt-[100px] pt-28 sm:pt-32 md:pt-[180px] px-4"
+  >
     <div class="container">
-      <h1 class="text-4xl sm:text-5xl md:text-[60px] text-[#F5F5F0] mb-3 sm:mb-4 font-['Noto_Nastaliq_Urdu',serif] font-bold animate-fadeInUp">شائع شدہ تصانیف</h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-[#D4AF37] font-['Cinzel',serif] animate-fadeInUp">Published Works</p>
+      <h1
+        class="text-4xl sm:text-5xl md:text-[60px] text-[#F5F5F0] mb-3 sm:mb-4 font-['Noto_Nastaliq_Urdu',serif] font-bold animate-fadeInUp"
+      >
+        شائع شدہ تصانیف
+      </h1>
+      <p
+        class="text-lg sm:text-xl md:text-2xl text-[#D4AF37] font-['Cinzel',serif] animate-fadeInUp"
+      >
+        Published Works
+      </p>
     </div>
   </section>
 
   <!-- Books Grid -->
-  <section class="bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8] py-12 sm:py-16 md:py-20 lg:py-[100px]">
+  <section
+    class="bg-gradient-to-br from-[#FBF8F3] to-[#F5F1E8] py-12 sm:py-16 md:py-20 lg:py-[100px]"
+  >
     <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-        {books.map((book, index) => (
-          <article class="bg-white rounded-2xl sm:rounded-[25px] p-6 sm:p-8 lg:p-10 shadow-[0_15px_50px_rgba(0,0,0,0.1)] border-2 border-[#C9A961] relative overflow-hidden transition-all duration-400 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_25px_70px_rgba(139,38,53,0.2)] animate-on-scroll book-card-gradient" style={`animation-delay: ${index * 0.1}s`}>
-            <span class="absolute top-4 left-4 sm:top-5 sm:left-5 bg-[#8B2635] text-white py-1 px-3 sm:py-1.25 sm:px-4 rounded-xl sm:rounded-[20px] text-xs font-medium">{book.category}</span>
-            <span class="flex justify-center my-4 sm:my-5">
-              <Icon name={book.icon} size={60} color="var(--primary-color)" />
-            </span>
-            <h2 class="text-2xl sm:text-3xl md:text-[30px] text-[#8B2635] mb-2 sm:mb-2.5 font-bold font-['Noto_Nastaliq_Urdu',serif] mt-8 sm:mt-12">{(book.title)}</h2>
-            <p class="text-base sm:text-lg text-[#2C1810] opacity-70 font-['Cinzel',serif] italic mb-4 sm:mb-5">{book.titleEn}</p>
-            <p class="text-sm sm:text-base leading-[1.8] sm:leading-[1.9] text-[#2C1810] opacity-85 mb-5 sm:mb-6">{book.description}</p>
-            <div class="border-t border-[#C9A961] pt-4 sm:pt-5">
-              <span class="inline-block py-2 sm:py-2.5 px-5 sm:px-6 bg-[#D4AF37] text-[#2C1810] rounded-2xl sm:rounded-[25px] text-xs sm:text-sm font-bold">{book.year}</span>
-            </div>
-          </article>
-        ))}
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
+      >
+        {
+          books.map((book, index) => (
+            <article
+              class="bg-white rounded-2xl sm:rounded-[25px] overflow-hidden shadow-[0_15px_50px_rgba(0,0,0,0.1)] border-2 border-[#C9A961] relative transition-all duration-400 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_25px_70px_rgba(139,38,53,0.2)] animate-on-scroll book-card-gradient flex flex-col"
+              style={`animation-delay: ${index * 0.1}s`}
+            >
+              <span class="absolute top-4 right-4 sm:top-5 sm:right-5 bg-[#8B2635] text-white py-1.5 px-3 sm:py-2 sm:px-4 rounded-xl sm:rounded-[20px] text-xs font-medium z-10">
+                {book.category}
+              </span>
+              
+              <!-- Book Image Container -->
+              <div class="pt-8 sm:pt-10 px-6 sm:px-8 flex justify-center">
+                <div class="w-[180px] h-[300px] bg-gradient-to-br from-[#8B2635] to-[#6B1A27] overflow-hidden flex items-center justify-center rounded-lg shadow-[0_8px_20px_rgba(0,0,0,0.15)]">
+                  <img 
+                    src={book.image} 
+                    alt={book.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8 lg:p-9 flex-grow flex flex-col">
+                <h2 class="text-xl sm:text-2xl md:text-[28px] text-[#8B2635] mb-2 font-bold font-['Noto_Nastaliq_Urdu',serif] text-center">
+                  {book.title}
+                </h2>
+                <p class="text-sm sm:text-base text-[#2C1810] opacity-70 font-['Cinzel',serif] italic mb-4 text-center">
+                  {book.titleEn}
+                </p>
+                
+                <div class="space-y-1.5 mb-4 sm:mb-5 text-center">
+                  {book.author && (
+                    <p class="text-xs sm:text-sm text-[#2C1810] opacity-80">
+                      نویسندہ: <span class="font-semibold">{book.author}</span>
+                    </p>
+                  )}
+                  {book.translator && (
+                    <p class="text-xs sm:text-sm text-[#2C1810] opacity-80">
+                      ترجمہ: <span class="font-semibold">{book.translator}</span>
+                    </p>
+                  )}
+                  {book.compiler && (
+                    <p class="text-xs sm:text-sm text-[#2C1810] opacity-80">
+                      مرتب: <span class="font-semibold">{book.compiler}</span>
+                    </p>
+                  )}
+                </div>
+
+                <p class="text-xs sm:text-sm leading-relaxed text-[#2C1810] opacity-85 mb-6 flex-grow text-center">
+                  {book.description}
+                </p>
+
+                <div class="border-t border-[#C9A961] pt-4">
+                  <div class="flex justify-center">
+                    <span class="inline-block py-2 px-6 bg-[#D4AF37] text-[#2C1810] rounded-full text-xs sm:text-sm font-bold shadow-[0_4px_12px_rgba(212,175,55,0.3)]">
+                      سال: {book.year}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
 
   <!-- Reading Quote -->
-  <section class="bg-gradient-to-br from-[#8B2635] to-[#6B1A27] py-12 sm:py-16 md:py-20">
+  <section
+    class="bg-gradient-to-br from-[#8B2635] to-[#6B1A27] py-12 sm:py-16 md:py-20"
+  >
     <div class="container px-4">
       <blockquote class="text-center text-[#F5F5F0] animate-on-scroll">
         <span class="flex justify-center mb-4 sm:mb-5">
           <Icon name="quote" size={60} color="var(--accent-color)" />
         </span>
-        <p class="text-2xl sm:text-3xl md:text-[36px] mb-4 sm:mb-5 font-['Noto_Nastaliq_Urdu',serif]">"ہر کتاب ایک نئی دنیا کا دروازہ ہے"</p>
-        <footer class="text-lg sm:text-xl text-[#D4AF37] not-italic font-['Cinzel',serif]">— عبدالباری ایم کے</footer>
+        <p
+          class="text-2xl sm:text-3xl md:text-[36px] mb-4 sm:mb-5 font-['Noto_Nastaliq_Urdu',serif]"
+        >
+          "ہر کتاب ایک نئی دنیا کا دروازہ ہے"
+        </p>
+        <footer
+          class="text-lg sm:text-xl text-[#D4AF37] not-italic font-['Cinzel',serif]"
+        >
+          — عبدالباری ایم کے
+        </footer>
       </blockquote>
     </div>
   </section>
@@ -78,9 +168,18 @@ const books = [
   <section class="py-12 sm:py-16 md:py-20 lg:py-[100px]">
     <div class="container px-4">
       <div class="text-center max-w-[600px] mx-auto animate-on-scroll">
-        <h2 class="text-3xl sm:text-4xl md:text-[40px] mb-3 sm:mb-4 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif] font-bold">آنے والی تصانیف</h2>
-        <p class="text-base sm:text-lg mb-6 sm:mb-8 opacity-80">نئے منصوبوں اور آئندہ کتابوں کے بارے میں جانیں</p>
-        <a href="/upcoming" class="inline-flex items-center gap-2 sm:gap-2.5 py-3 sm:py-4 px-8 sm:px-11 bg-[#D4AF37] text-[#2C1810] rounded-[50px] text-base sm:text-lg font-bold no-underline transition-all duration-400 shadow-[0_8px_25px_rgba(212,175,55,0.4)] hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(212,175,55,0.6)] hover:bg-[#E5C158]">
+        <h2
+          class="text-3xl sm:text-4xl md:text-[40px] mb-3 sm:mb-4 text-[#8B2635] font-['Noto_Nastaliq_Urdu',serif] font-bold"
+        >
+          آنے والی تصانیف
+        </h2>
+        <p class="text-base sm:text-lg mb-6 sm:mb-8 opacity-80">
+          نئے منصوبوں اور آئندہ کتابوں کے بارے میں جانیں
+        </p>
+        <a
+          href="/upcoming"
+          class="inline-flex items-center gap-2 sm:gap-2.5 py-3 sm:py-4 px-8 sm:px-11 bg-[#D4AF37] text-[#2C1810] rounded-[50px] text-base sm:text-lg font-bold no-underline transition-all duration-400 shadow-[0_8px_25px_rgba(212,175,55,0.4)] hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(212,175,55,0.6)] hover:bg-[#E5C158]"
+        >
           <Icon name="clock" size={20} />
           دیکھیں
         </a>
@@ -91,12 +190,12 @@ const books = [
 
 <style>
   .book-card-gradient::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 6px;
-    background: linear-gradient(90deg, #8B2635, #D4AF37);
+    background: linear-gradient(90deg, #8b2635, #d4af37);
   }
 </style>

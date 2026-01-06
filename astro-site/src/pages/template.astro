@@ -1,0 +1,274 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout title="نیا صفحہ - New Page">
+    <!-- Hero Banner -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title animate-fadeInUp">صفحہ کا عنوان</h1>
+            <p class="page-subtitle animate-fadeInUp">Page Subtitle Here</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-wrapper animate-on-scroll">
+                <h2 class="section-heading">مرحبا</h2>
+
+                <p class="content-text">
+                    یہاں آپ کے صفحہ کا مواد شامل کریں۔ یہ ایک template ہے جو نئے
+                    صفحات کے لیے استعمال ہو سکتا ہے۔
+                </p>
+
+                <p class="content-text">
+                    Add your content here. This is a template for creating new
+                    pages with consistent styling and layout.
+                </p>
+
+                <!-- Example Feature Box -->
+                <div class="feature-box">
+                    <Icon name="star" size={40} color="var(--primary-color)" />
+                    <h3>خصوصیت</h3>
+                    <p>یہاں کوئی خصوصیت یا معلومات شامل کریں</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>اگلا قدم</h2>
+                <p class="cta-subtitle">Next Step</p>
+
+                <a href="/" class="btn btn-primary">
+                    <Icon name="arrow-right" size={20} />
+                    ہوم پیج پر جائیں
+                </a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .page-hero {
+        background: linear-gradient(
+            135deg,
+            var(--primary-color) 0%,
+            var(--primary-dark) 100%
+        );
+        padding: 80px 0;
+        text-align: center;
+        margin-top: -100px;
+        padding-top: 180px;
+        color: var(--text-light);
+    }
+
+    .page-title {
+        font-size: 60px;
+        margin-bottom: 15px;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+    }
+
+    .page-subtitle {
+        font-size: 24px;
+        color: var(--accent-color);
+        font-family: "Cinzel", serif;
+    }
+
+    /* Content Section */
+    .content-section {
+        padding: 100px 0;
+        background: linear-gradient(to bottom, var(--bg-cream), white);
+    }
+
+    .content-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .section-heading {
+        font-size: 40px;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        text-align: center;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+    }
+
+    .content-text {
+        font-size: 18px;
+        line-height: 1.9;
+        color: var(--text-dark);
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    /* Feature Box */
+    .feature-box {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        border: 2px solid var(--secondary-color);
+        text-align: center;
+        margin-top: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(139, 38, 53, 0.1);
+    }
+
+    .feature-box h3 {
+        font-size: 24px;
+        color: var(--primary-color);
+        margin: 15px 0 10px 0;
+        font-family: "Noto Nastaliq Urdu", serif;
+    }
+
+    .feature-box p {
+        font-size: 16px;
+        color: var(--text-dark);
+        opacity: 0.8;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 100px 0;
+        background: linear-gradient(
+            135deg,
+            var(--primary-color) 0%,
+            var(--primary-dark) 100%
+        );
+    }
+
+    .cta-content {
+        text-align: center;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .cta-content h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        font-family: "Noto Nastaliq Urdu", serif;
+        font-weight: bold;
+    }
+
+    .cta-subtitle {
+        font-size: 20px;
+        color: var(--accent-color);
+        font-family: "Cinzel", serif;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 40px;
+        background: var(--accent-color);
+        color: var(--primary-color);
+        border: none;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .page-hero {
+            padding: 40px 0;
+            padding-top: 120px;
+        }
+
+        .page-title {
+            font-size: 42px;
+        }
+
+        .page-subtitle {
+            font-size: 18px;
+        }
+
+        .section-heading {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .content-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            padding: 30px 20px;
+            margin-top: 30px;
+        }
+
+        .cta-content h2 {
+            font-size: 32px;
+        }
+
+        .cta-subtitle {
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .page-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+        }
+
+        .content-wrapper {
+            padding: 0 15px;
+        }
+
+        .section-heading {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .content-text {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .feature-box {
+            padding: 25px 15px;
+        }
+
+        .cta-content h2 {
+            font-size: 26px;
+        }
+
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>

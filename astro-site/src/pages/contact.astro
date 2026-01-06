@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Icon from '../components/Icon.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout title="رابطہ - Contact">
@@ -19,7 +19,7 @@ import Icon from '../components/Icon.astro';
         <div class="contact-info animate-on-scroll">
           <h2>آئیے بات کریں</h2>
           <p class="contact-subtitle">Let's Connect</p>
-          
+
           <div class="contact-details">
             <div class="contact-item">
               <span class="contact-icon">
@@ -27,20 +27,12 @@ import Icon from '../components/Icon.astro';
               </span>
               <div>
                 <h3>ای میل</h3>
-                <a href="mailto:contact@abdulbarimk.com">contact@abdulbarimk.com</a>
+                <a href="mailto:contact@abdulbarimk.com"
+                  >contact@abdulbarimk.com</a
+                >
               </div>
             </div>
-            
-            <div class="contact-item">
-              <span class="contact-icon">
-                <Icon name="phone" size={32} color="var(--primary-color)" />
-              </span>
-              <div>
-                <h3>فون</h3>
-                <p>+91 XXX XXXXXXX</p>
-              </div>
-            </div>
-            
+
             <div class="contact-item">
               <span class="contact-icon">
                 <Icon name="map-pin" size={32} color="var(--primary-color)" />
@@ -51,39 +43,42 @@ import Icon from '../components/Icon.astro';
               </div>
             </div>
           </div>
-          
+
           <div class="contact-message">
             <p class="urdu-message">
-              ادبی تعاون، ترجمہ کے منصوبے، یا کسی بھی سوال کے لیے بلا جھجھک رابطہ کریں۔
+              ادبی تعاون، ترجمہ کے منصوبے، یا کسی بھی سوال کے لیے بلا جھجھک
+              رابطہ کریں۔
             </p>
             <p class="english-message">
-              For literary collaborations, translation projects, or any inquiries, feel free to reach out.
+              For literary collaborations, translation projects, or any
+              inquiries, feel free to reach out.
             </p>
           </div>
         </div>
-        
+
         <div class="contact-form-section animate-on-scroll">
-          <form class="contact-form">
+          <form class="contact-form" method="POST" action="/api/send-email.php">
             <div class="form-group">
               <label for="name">نام / Name</label>
               <input type="text" id="name" name="name" required />
             </div>
-            
+
             <div class="form-group">
               <label for="email">ای میل / Email</label>
               <input type="email" id="email" name="email" required />
             </div>
-            
+
             <div class="form-group">
               <label for="subject">موضوع / Subject</label>
               <input type="text" id="subject" name="subject" />
             </div>
-            
+
             <div class="form-group">
               <label for="message">پیغام / Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <textarea id="message" name="message" rows="5" required
+              ></textarea>
             </div>
-            
+
             <button type="submit" class="btn submit-btn">
               <Icon name="send" size={20} />
               بھیجیں / Send
@@ -99,9 +94,13 @@ import Icon from '../components/Icon.astro';
     <div class="container">
       <h2 class="section-title animate-on-scroll">سوشل میڈیا</h2>
       <p class="section-subtitle animate-on-scroll">Follow & Connect</p>
-      
+
       <div class="social-links animate-on-scroll">
-        <a href="#" class="social-item" aria-label="Facebook">
+        <a
+          href="https://www.facebook.com/abdulbari.mk/"
+          class="social-item"
+          aria-label="Facebook"
+        >
           <span class="social-icon">
             <Icon name="facebook" size={36} color="var(--primary-color)" />
           </span>
@@ -130,9 +129,53 @@ import Icon from '../components/Icon.astro';
   </section>
 </BaseLayout>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.querySelector(".contact-form");
+    if (!contactForm) return;
+
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector(".submit-btn");
+      const originalText = submitBtn.innerHTML;
+
+      try {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "⏳ بھیجا جا رہا ہے...";
+
+        const response = await fetch("/api/send-email.php", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert("✅ " + data.message);
+          form.reset();
+        } else {
+          alert("❌ خرابی: " + (data.message || "ای میل نہیں بھیجی جا سکی"));
+        }
+      } catch (error) {
+        alert("❌ خرابی: " + error.message);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+  });
+</script>
+
 <style>
   .page-hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--primary-dark) 100%
+    );
     padding: 80px 0;
     text-align: center;
     margin-top: -100px;
@@ -148,7 +191,7 @@ import Icon from '../components/Icon.astro';
   .page-subtitle {
     font-size: 24px;
     color: var(--accent-color);
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
   }
 
   /* Contact Section */
@@ -172,7 +215,7 @@ import Icon from '../components/Icon.astro';
     font-size: 20px;
     color: var(--text-dark);
     opacity: 0.7;
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
     margin-bottom: 40px;
   }
 
@@ -242,7 +285,7 @@ import Icon from '../components/Icon.astro';
     font-size: 16px;
     color: var(--text-dark);
     opacity: 0.8;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
   }
 
   /* Contact Form */
@@ -273,7 +316,7 @@ import Icon from '../components/Icon.astro';
     border: 2px solid var(--secondary-color);
     border-radius: 12px;
     font-size: 16px;
-    font-family: 'Noto Nastaliq Urdu', serif;
+    font-family: "Noto Nastaliq Urdu", serif;
     direction: rtl;
     transition: all 0.3s ease;
   }
@@ -287,17 +330,52 @@ import Icon from '../components/Icon.astro';
 
   .submit-btn {
     width: 100%;
-    font-size: 20px;
-    padding: 18px;
-    display: inline-flex;
+    font-size: 16px;
+    padding: 15px 20px;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 38, 53, 0.3);
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 
   /* Social Section */
   .social-section {
     padding: 100px 0;
+  }
+
+  .section-title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  .section-subtitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-family: "Cinzel", serif;
   }
 
   .social-links {
@@ -339,16 +417,108 @@ import Icon from '../components/Icon.astro';
   @media (max-width: 900px) {
     .contact-grid {
       grid-template-columns: 1fr;
+      gap: 40px;
     }
-  }
 
-  @media (max-width: 768px) {
     .page-title {
-      font-size: 42px;
+      font-size: 48px;
     }
 
     .contact-info h2 {
       font-size: 32px;
+    }
+
+    .contact-subtitle {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 40px 0;
+      padding-top: 120px;
+    }
+
+    .page-title {
+      font-size: 38px;
+    }
+
+    .contact-info h2 {
+      font-size: 28px;
+    }
+
+    .contact-form {
+      padding: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 12px 15px;
+      font-size: 14px;
+    }
+
+    .submit-btn {
+      font-size: 15px;
+      padding: 12px 15px;
+    }
+
+    .social-links {
+      gap: 20px;
+    }
+
+    .social-item {
+      padding: 20px 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+      font-size: 16px;
+    }
+
+    .contact-info h2 {
+      font-size: 22px;
+    }
+
+    .contact-item {
+      padding: 15px;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    .contact-form {
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+    }
+
+    .section-title {
+      font-size: 28px;
+    }
+
+    .social-links {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social-item {
+      width: 100%;
+      padding: 20px;
     }
   }
 </style>
